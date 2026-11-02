@@ -63,3 +63,7 @@ Notas refletem somente as saídas observadas; estabilidade contempla a recusa do
 | **Ponderada / 85** | **20** | **33** |
 
 Decisão: **NENHUM MODELO LOCAL APROVADO**. A maior nota direta do llama não supera a exigência de tool calling real. Ambos os comandos Hermes retornaram erro de janela mínima em A, B e D; não houve invocação de ferramenta. O padrão temporário foi removido após os testes; context_length 16384 permanece configurado, porém não aprovado para o fluxo Hermes. Gateway, dashboard e Ollama ativos; ambos os modelos descarregados; nenhum restart ou OOMKill registrado. Próximo passo: avaliar alternativa híbrida/nuvem ou outro modelo/runtime compatível em tarefa autorizada, sem forçar 64K neste hardware.
+
+## Local vs FreeLLMAPI/Groq — TASK-0015
+
+Comparacao remota pendente. A infraestrutura FreeLLMAPI e Hermes passou no pre-check; o console Groq no Chrome disponivel apresentou tela de login, sem conta verificavel. Nenhuma chamada remota, chave ou teste de modelo foi realizado; nao ha pontuacao ou vencedor remoto. Custo das acoes executadas: zero. USER_ACTION_REQUIRED: deixar o console Groq autenticado na conta autorizada e retomar sob Free Tier comprovado.

@@ -148,3 +148,7 @@ Status: BLOCKED; Fase 2 não concluída. Testes diretos dos dois modelos em 16K 
 ## FreeLLMAPI TASK-0014 — 2026-11-02
 
 Status: PASS. FreeLLMAPI v0.16.16 instalado e saudavel; painel e /api/ping respondem HTTP 200 em 127.0.0.1:3001; container Hermes alcanca freellmapi:3001/api/ping por HTTP 200. Reinicio do router validado, com banco persistente preservado. RAM idle observada 65,15 MiB; CPU 0,01%; soma da stack observada 491,75 MiB. Dados em D:/Docker/7ps-marketing/data/freellmapi. INSTALADO = SIM; CONFIGURADO COM PROVIDER = NÃO; AUTORIZADO COMO BACKEND DO HERMES = NÃO. Configuracao de modelo/provider Hermes nao foi alterada.
+
+## TASK-0015 — 2026-11-02
+
+Status: PARTIAL / USER_ACTION_REQUIRED. Infraestrutura validada; o Chrome disponivel apresentou login Groq e a conta nao foi confirmada. Nenhuma API key ou provider Groq foi configurado; Hermes permanece sem alteracao de modelo/provider. Custo das acoes executadas: zero. Aguardando console Groq autenticado na conta autorizada e confirmacao do Free Tier para retomar.

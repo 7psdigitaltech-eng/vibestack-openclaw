@@ -1,6 +1,6 @@
 # TASK-0015 — Configurar Groq no FreeLLMAPI e validar Hermes remoto
 
-Status: READY
+Status: PARTIAL
 
 ## Objetivo
 
@@ -442,3 +442,7 @@ Custo: <R$ 0,00 / US$ 0,00 | gate acionado>
 Ação humana pendente: <nenhuma | descrição curta>
 Bloqueio: <nenhum ou curto>
 ```
+
+## Resultado parcial — 2026-11-02
+
+Status: PARTIAL; USER_ACTION_REQUIRED. Pre-check: FreeLLMAPI running/healthy, host 3001 HTTP 200, gateway Hermes ativo, dashboard e Ollama HTTP 200, comunicacao Hermes -> FreeLLMAPI HTTP 200 e nenhum modelo Ollama carregado. Baseline: Hermes 443,7 MiB e FreeLLMAPI 56,44 MiB, aproximadamente 500,14 MiB na stack. Chrome disponivel no perfil Trabalho apresentou tela de login do Groq; a conta nao foi confirmada. Nenhum login, cadastro, aceite, API key, provider, alteracao de modelo ou chamada de inferencia foi realizado. Custo das acoes executadas: zero. Acao humana: abrir o Groq Console no Chrome autenticado exclusivamente como edujr.android@gmail.com e deixar a area API Keys pronta para continuacao, sem enviar credenciais ao Chat. A elegibilidade Free Tier deve ser confirmada antes de criar chave ou testar.
