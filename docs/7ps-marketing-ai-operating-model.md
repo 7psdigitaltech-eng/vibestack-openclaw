@@ -1,5 +1,18 @@
 # Modelo Operacional — Chat + GitHub + Work
 
+## Modo operacional simplificado
+
+O documento canônico para handoff ao Work é:
+
+```text
+docs/ops/WORK.md
+```
+
+Regra prática: o Chat cria/documenta a TASK; o usuário envia ao Work apenas um prompt curto apontando para essa TASK; o Work sincroniza o repositório quando necessário, executa, registra o resultado e devolve um resumo curto.
+
+Os documentos de guardrails e ambientes permanecem como referência, mas não precisam ser citados no prompt do usuário nem gerar TASKs intermediárias de preflight/reconciliação.
+
+
 Este documento define o fluxo oficial de planejamento, execução e registro do projeto **7Ps Marketing AI**.
 
 O objetivo é separar governança de execução, manter o GitHub como fonte de verdade e reduzir a necessidade de interação manual no PowerShell, IDE ou terminal local.
