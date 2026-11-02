@@ -1,6 +1,6 @@
 # TASK-0017 — Benchmark decisivo Gemini 2.5 Flash para o Diretor
 
-Status: READY
+Status: BLOCKED
 
 ## Objetivo
 
@@ -384,3 +384,6 @@ Ollama carregado: <sim/não>
 Custo: R$ 0,00 / US$ 0,00
 Bloqueio: <nenhum ou curto>
 ```
+## Resultado — 2026-11-02
+
+Status: BLOCKED. Pre-check: FreeLLMAPI healthy, Google e Groq habilitados e saudaveis, gateway/dashboard e Ollama ativos, nenhum modelo carregado. Catalogo local lista gemini-2.5-flash habilitado, Google, contexto 1048576 e tools=true. Free Tier sem billing confirmado na TASK-0016; custo autorizado zero. O primeiro teste direto sintetico A retornou HTTP 404 em aproximadamente 1,12 s. Diagnostico sanitizado do router: tentativa Google gemini-2.5-flash classificada model_not_found. Isso nao prova por que o provedor nao encontrou o modelo. Nenhum modelo alternativo foi testado; nao houve pontuacao de qualidade, teste Hermes ou selecao. Hermes permanece sem default e com endpoint Ollama local; servicos em execucao. Amostra final: Hermes 399,8 MiB, FreeLLMAPI 85,04 MiB. Nenhuma chave foi rotacionada ou exibida e billing nao foi alterado; custo Free zero. Proximo passo: reconciliar disponibilidade do modelo no projeto Google e no catalogo do router em tarefa autorizada.

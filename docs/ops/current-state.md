@@ -184,3 +184,7 @@ Provider keys Google/Groq: não observadas expostas
 ```
 
 A exposição permanece registrada como incidente. Novos testes internos não devem ser bloqueados exclusivamente pela ausência de rotação, mas o valor da chave nunca deve ser exibido ou registrado.
+
+## TASK-0017 — 2026-11-02
+
+Status: BLOCKED. gemini-2.5-flash consta habilitado no catalogo local, mas a primeira solicitacao sintetica ao Google retornou HTTP 404 e o router classificou a tentativa como model_not_found. Nenhum outro modelo foi testado ou selecionado; Hermes permanece sem default aprovado e apontando ao Ollama local. Google e Groq preservados; sem alteracao de billing ou rotacao de chave; custo Free zero. Proximo passo: reconciliar a disponibilidade real do modelo e o catalogo.

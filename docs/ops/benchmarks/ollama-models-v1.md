@@ -83,3 +83,7 @@ Status: PARTIAL. Google habilitado e saudavel no FreeLLMAPI; catalogo local incl
 ### TASK-0016 — Google Free / superficie reduzida
 
 Gemini 3.1 Flash Lite: testes A/B HTTP 200 (1,60/3,30 s), portugues 4/5 e planejamento 2/5 por diagnostico excessivamente confiante sem evidencias; terminal-only e superficie minima de seis funcoes passaram em tool call real sintetico. Gemini 3.6 Flash: A HTTP 200, B HTTP 502. Ferramentas medidas offline: terminal/web/todo = seis funcoes, 8.316 bytes de schemas; estimativa conservadora de sistema 37.838 bytes. Testes usaram --ignore-rules e nao validam contexto pessoal real. Restart e one-shot passaram. Modelo nao aprovado: qualidade minima de planejamento nao demonstrada e chave unificada foi exibida pelo painel na saida da ferramenta; regeneracao necessaria. Custo Free zero; sem billing. Detalhes na TASK-0016.
+
+## TASK-0017 — Gemini 2.5 Flash
+
+Status: BLOCKED. Catalogo local: Google, contexto 1048576, tools habilitadas; primeiro teste direto sintetico retornou HTTP 404, classificado pelo router como model_not_found. A causa especifica nao foi comprovada. Testes B/C/D, Hermes e ferramentas nao executados; sem nota e sem modelo selecionado. Nenhum outro modelo testado. Free Tier confirmado; sem alteracao de billing ou rotacao de chave.

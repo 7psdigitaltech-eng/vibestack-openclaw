@@ -68,3 +68,7 @@ Até lá, o status permanece APPROVED_FOR_EVALUATION.
 ## Evidencia adicional — TASK-0016
 
 Gemini via FreeLLMAPI realizou tool calling real em superficies restritas e com dados sinteticos; resultado de planejamento mostrou diagnostico nao sustentado, e a chave unificada foi exibida pelo painel na saida da ferramenta. A chave precisa ser regenerada antes de nova avaliacao. Tools do Diretor devem ser role-scoped/demand-scoped. A decisao arquitetural permanece APPROVED_FOR_EVALUATION; nenhum backend foi aprovado por esta TASK.
+
+## Evidencia adicional — TASK-0017
+
+O catalogo local indicou gemini-2.5-flash como disponivel, mas a primeira chamada ao Google retornou 404 e foi classificada model_not_found pelo router. A disponibilidade real permanece nao comprovada; nenhum backend foi aprovado nesta TASK. O status do ADR permanece APPROVED_FOR_EVALUATION.
