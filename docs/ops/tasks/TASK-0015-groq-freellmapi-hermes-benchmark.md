@@ -47,6 +47,60 @@ Architecture change allowed: NÃO
 Paid upgrade/billing allowed: NÃO
 Other providers allowed: NÃO
 
+## Política obrigatória de conta e custo
+
+Conta autorizada para qualquer login/criação de conta nesta TASK:
+
+```text
+Google account: edujr.android@gmail.com
+```
+
+Custo máximo autorizado:
+
+```text
+R$ 0,00
+US$ 0,00
+```
+
+### Permitido
+
+- usar "Continue with Google"/"Sign in with Google" exclusivamente com `edujr.android@gmail.com`;
+- criar conta Groq gratuita vinculada exclusivamente a `edujr.android@gmail.com`;
+- criar projeto/workspace gratuito, quando necessário para obter API key;
+- criar API key Groq dentro do Free Tier;
+- usar somente recursos explicitamente gratuitos;
+- executar testes respeitando as quotas gratuitas.
+
+### Proibido
+
+- usar qualquer outra conta Google ou e-mail;
+- criar conta com outro e-mail;
+- adicionar cartão ou qualquer meio de pagamento;
+- habilitar billing;
+- fazer upgrade para Developer/Paid ou equivalente;
+- comprar créditos;
+- iniciar assinatura;
+- ativar recurso que gere cobrança;
+- aceitar trial que exija meio de pagamento ou possa converter automaticamente em cobrança sem nova aprovação humana;
+- alterar orçamento/limites pagos;
+- contornar paywall, quota ou rate limit por meio de cobrança;
+- reutilizar credencial de outra conta/projeto.
+
+### STOP obrigatório
+
+Interromper e retornar `USER_ACTION_REQUIRED` se ocorrer qualquer um dos casos:
+
+- a conta Google exibida não for exatamente `edujr.android@gmail.com`;
+- for necessário informar senha manualmente;
+- houver CAPTCHA;
+- houver 2FA/MFA ou aprovação no celular;
+- houver escolha/aceite de termos ou consentimento que exija decisão humana;
+- houver solicitação de cartão, pagamento, billing, crédito ou upgrade;
+- não for possível comprovar que a operação permanece no Free Tier;
+- a plataforma tentar selecionar automaticamente outra conta.
+
+O Work NÃO deve tentar resolver nenhum desses gates sozinho.
+
 Repo:
 
 ```text
@@ -89,27 +143,35 @@ Confirmar:
 
 ### Caminho preferencial
 
-Se Work tiver acesso a uma sessão de navegador autenticada no Groq Console:
-
-1. abrir a área oficial de API Keys;
-2. criar uma chave dedicada com nome equivalente a:
+1. abrir o Groq Console oficial;
+2. usar login Google exclusivamente com `edujr.android@gmail.com`;
+3. se a conta Groq gratuita ainda não existir, criá-la somente quando isso puder ser concluído sem custo, sem cartão e sem gate humano;
+4. confirmar visualmente que a sessão Groq resultante pertence a `edujr.android@gmail.com`;
+5. criar uma chave dedicada com nome equivalente a:
    `7ps-marketing-freellmapi`;
-3. inserir imediatamente a chave no FreeLLMAPI pela página local `http://127.0.0.1:3001` em Keys -> Groq;
-4. não salvar a chave em arquivo intermediário;
-5. não exibir a chave em logs.
+6. inserir imediatamente a chave no FreeLLMAPI pela página local `http://127.0.0.1:3001` em Keys -> Groq;
+7. não salvar a chave em arquivo intermediário;
+8. não exibir a chave em logs.
 
 ### Gate humano
 
-Se login, CAPTCHA, 2FA ou confirmação humana impedir o Work:
+Se login, CAPTCHA, senha, 2FA/MFA, aceite explícito de termos ou qualquer confirmação humana impedir o Work:
 
 - NÃO contornar;
 - retornar `USER_ACTION_REQUIRED`;
-- indicar apenas que o usuário deve criar uma Groq API key e adicioná-la no dashboard local do FreeLLMAPI;
-- não pedir que a chave seja enviada ao Chat.
+- indicar somente a ação necessária e o site/tela em que o usuário deve intervir;
+- manter como requisito a conta `edujr.android@gmail.com`;
+- não pedir que senha, código 2FA ou API key seja enviado ao Chat.
 
-Depois que a chave estiver adicionada, a mesma TASK pode ser retomada.
+Se o usuário concluir o login/criação e deixar a sessão autenticada, a mesma TASK pode ser retomada para criar/inserir a API key e continuar.
 
-Não habilitar billing ou plano pago.
+Se aparecer qualquer opção paga, cartão, Developer Tier, billing, compra de crédito ou trial com cobrança potencial:
+
+- NÃO selecionar;
+- retornar `USER_ACTION_REQUIRED` ou `BLOCKED`;
+- registrar `COST_GUARD=TRIGGERED`.
+
+Nunca habilitar billing ou plano pago.
 
 ## 2. Validar chave Groq no FreeLLMAPI
 
@@ -323,7 +385,9 @@ PASS quando:
 - ao menos um modelo aprovado;
 - restart/persistência PASS;
 - nenhum segredo exposto;
-- nenhuma cobrança/plano pago habilitado.
+- nenhuma cobrança/plano pago habilitado;
+- conta Groq confirmada como vinculada a `edujr.android@gmail.com`;
+- custo efetivo e autorizado = zero.
 
 PARTIAL se a infraestrutura estiver pronta, mas apenas ação humana de login/API key impedir a conclusão.
 
@@ -353,6 +417,8 @@ Hermes one-shot: <status>
 Tool calling: <status>
 Ollama carregado: <sim/não>
 RAM stack: <valor>
+Conta utilizada: <edujr.android@gmail.com | não configurada>
+Custo: <R$ 0,00 / US$ 0,00 | gate acionado>
 Ação humana pendente: <nenhuma | descrição curta>
 Bloqueio: <nenhum ou curto>
 ```
