@@ -1,6 +1,6 @@
 # TASK-0001A — Reconciliar resultado local da TASK-0001 com GitHub
 
-Status: READY
+Status: BLOCKED
 
 ## Objetivo
 
@@ -110,10 +110,10 @@ PASS somente se:
 
 ## Resultado
 
-Status: READY
-Commit:
-TASK-0001 remote state:
-Current-state remote state:
+Status: BLOCKED
+Commit remoto observado: 5e04d61846be99cf15149c252825ed812fc490f1
+TASK-0001 remote state: BLOCKED
+Current-state remote state: mantém o bloqueio operacional anterior
 Secrets committed: NO/UNKNOWN
-Desvios:
-Bloqueio:
+Desvios: o clone local não continha os arquivos operacionais mais recentes
+Bloqueio: o preflight exigia leitura da TASK no clone local e determinava parada imediata; nenhuma sincronização foi realizada
