@@ -484,3 +484,28 @@ A unified API key do FreeLLMAPI não deve ser enviada ao Chat. Se for necessári
 ## Retomada — 2026-11-02
 
 Status: PARTIAL; USER_ACTION_REQUIRED; COST_GUARD=TRIGGERED. Groq configurado manualmente pelo usuario; dashboard local mostra 1 provider, 1 chave Groq habilitada e saudavel, e 7 modelos na cadeia. Catalogo apresenta Qwen3.8 27B e GPT-OSS 20B; contexto e ferramentas conforme evidencia manual acima. Stack healthy, gateway ativo, dashboard, Ollama e ping interno HTTP 200; nenhum modelo Ollama carregado; baseline 465,1 MiB Hermes + 83,18 MiB router. O console Groq acessivel na sessao Chrome Trabalho apresentou login; nao foi possivel comprovar o plano da conta. O saldo estimado do router nao comprova Free Tier Groq. Nenhuma inferencia remota, alteracao de provider Hermes, criacao de chave ou login foi realizada nesta retomada; custo das acoes executadas zero. Acao humana: comprovar na conta Groq autorizada que o plano ativo e Free Tier sem cobranca e disponibilizar essa confirmacao para continuar, sem informar credenciais no Chat.
+
+
+## Evidência de plano Groq — 2026-11-02
+
+O usuário forneceu evidência visual da página Groq Console > Settings > Billing > Plans.
+
+Estado confirmado:
+
+- plano `Free` marcado como `Current Plan`;
+- preço exibido: `$0`;
+- plano `Developer` separado, com cobrança `Pay per Token`;
+- nenhum upgrade foi realizado;
+- nenhum billing pago foi habilitado.
+
+Portanto, para esta TASK:
+
+```text
+GROQ_PLAN=FREE
+COST_GUARD=PASS
+AUTHORIZED_COST=R$ 0,00 / US$ 0,00
+```
+
+O Work NÃO deve bloquear novamente por falta de comprovação do plano gratuito, desde que a organização/projeto em uso continue sendo a mesma sessão Groq já configurada pelo usuário.
+
+Se qualquer tela futura indicar mudança de plano, billing, Developer/paid ou cobrança, acionar novamente o STOP de custo.
