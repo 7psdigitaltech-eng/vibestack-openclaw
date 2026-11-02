@@ -1,6 +1,6 @@
 # TASK-0001A — Reconciliar resultado local da TASK-0001 com GitHub
 
-Status: BLOCKED
+Status: SUPERSEDED
 
 ## Objetivo
 
@@ -117,3 +117,8 @@ Current-state remote state: mantém o bloqueio operacional anterior
 Secrets committed: NO/UNKNOWN
 Desvios: o clone local não continha os arquivos operacionais mais recentes
 Bloqueio: o preflight exigia leitura da TASK no clone local e determinava parada imediata; nenhuma sincronização foi realizada
+
+
+## Superseded
+
+Esta TASK foi encerrada como parte da simplificação do fluxo Chat → GitHub → Work. Sincronização do clone e preflight passam a ser etapas iniciais da própria TASK operacional, conforme `docs/ops/WORK.md`.
