@@ -143,15 +143,28 @@ Confirmar:
 
 ### Caminho preferencial
 
-1. abrir o Groq Console oficial;
-2. usar login Google exclusivamente com `edujr.android@gmail.com`;
-3. se a conta Groq gratuita ainda não existir, criá-la somente quando isso puder ser concluído sem custo, sem cartão e sem gate humano;
-4. confirmar visualmente que a sessão Groq resultante pertence a `edujr.android@gmail.com`;
-5. criar uma chave dedicada com nome equivalente a:
+Estado conhecido antes da execução:
+
+- a conta Groq já foi criada;
+- ela está vinculada à conta Google `edujr.android@gmail.com`;
+- existe uma sessão já autenticada no Google Chrome do usuário;
+- o Groq Console já está aberto/autenticado nessa conta.
+
+Portanto o Work deve, nesta ordem:
+
+1. reutilizar a sessão já autenticada no Chrome, se a superfície Work/Local tiver acesso ao navegador/sessão existente;
+2. NÃO refazer cadastro;
+3. NÃO criar outra conta Groq;
+4. NÃO iniciar novo login Google se a sessão existente já estiver válida;
+5. confirmar visualmente que a sessão Groq pertence a `edujr.android@gmail.com`;
+6. abrir a área API Keys do Groq;
+7. criar uma chave dedicada com nome equivalente a:
    `7ps-marketing-freellmapi`;
-6. inserir imediatamente a chave no FreeLLMAPI pela página local `http://127.0.0.1:3001` em Keys -> Groq;
-7. não salvar a chave em arquivo intermediário;
-8. não exibir a chave em logs.
+8. inserir imediatamente a chave no FreeLLMAPI pela página local `http://127.0.0.1:3001` em Keys -> Groq;
+9. não salvar a chave em arquivo intermediário;
+10. não exibir a chave em logs.
+
+Se a sessão existente estiver expirada, somente então poderá tentar "Continue with Google", sempre exclusivamente com `edujr.android@gmail.com`, respeitando os gates humanos e de custo desta TASK.
 
 ### Gate humano
 
@@ -163,7 +176,14 @@ Se login, CAPTCHA, senha, 2FA/MFA, aceite explícito de termos ou qualquer confi
 - manter como requisito a conta `edujr.android@gmail.com`;
 - não pedir que senha, código 2FA ou API key seja enviado ao Chat.
 
-Se o usuário concluir o login/criação e deixar a sessão autenticada, a mesma TASK pode ser retomada para criar/inserir a API key e continuar.
+Se o Work/Local não conseguir controlar o Chrome/sessão existente, retornar `USER_ACTION_REQUIRED` pedindo somente que o usuário:
+- abra o Groq Console já autenticado;
+- navegue até API Keys, se necessário;
+- deixe a página pronta para continuação.
+
+Não pedir novo cadastro nem novo login enquanto a sessão atual estiver válida.
+
+Se o usuário concluir a interação necessária e deixar a sessão pronta, a mesma TASK pode ser retomada para criar/inserir a API key e continuar.
 
 Se aparecer qualquer opção paga, cartão, Developer Tier, billing, compra de crédito ou trial com cobrança potencial:
 
