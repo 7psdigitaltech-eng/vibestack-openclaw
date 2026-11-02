@@ -446,3 +446,37 @@ Bloqueio: <nenhum ou curto>
 ## Resultado parcial — 2026-11-02
 
 Status: PARTIAL; USER_ACTION_REQUIRED. Pre-check: FreeLLMAPI running/healthy, host 3001 HTTP 200, gateway Hermes ativo, dashboard e Ollama HTTP 200, comunicacao Hermes -> FreeLLMAPI HTTP 200 e nenhum modelo Ollama carregado. Baseline: Hermes 443,7 MiB e FreeLLMAPI 56,44 MiB, aproximadamente 500,14 MiB na stack. Chrome disponivel no perfil Trabalho apresentou tela de login do Groq; a conta nao foi confirmada. Nenhum login, cadastro, aceite, API key, provider, alteracao de modelo ou chamada de inferencia foi realizado. Custo das acoes executadas: zero. Acao humana: abrir o Groq Console no Chrome autenticado exclusivamente como edujr.android@gmail.com e deixar a area API Keys pronta para continuacao, sem enviar credenciais ao Chat. A elegibilidade Free Tier deve ser confirmada antes de criar chave ou testar.
+
+
+## Estado confirmado manualmente — 2026-11-02
+
+O usuário concluiu manualmente a criação do primeiro usuário do FreeLLMAPI e adicionou a chave Groq vinculada à conta Google autorizada `edujr.android@gmail.com`.
+
+Evidência visual fornecida pelo usuário no dashboard local do FreeLLMAPI:
+
+- provider Groq configurado;
+- onboarding: "Adicionar uma chave de fornecedor" concluído;
+- orçamento exibido: 39,0M tokens remanescentes;
+- estratégia atual: Equilibrado;
+- modelos visíveis/elegíveis para avaliação:
+  - `Qwen3.8 27B` — Groq — 262K CTX — Ferramentas;
+  - `GPT-OSS 120B` — Groq — 131K CTX — Ferramentas;
+  - `GPT-OSS 20B` — Groq — 131K CTX — Ferramentas;
+  - `GPT-OSS Safeguard 20B` — Groq — 131K CTX — Ferramentas;
+- `ALLam 2 7B` aparece com 4K CTX e não é elegível para Hermes;
+- modelos Prompt Guard não são candidatos ao Diretor.
+
+Ao retomar esta TASK:
+
+1. NÃO repetir login;
+2. NÃO criar nova conta;
+3. NÃO criar nova Groq API key;
+4. considerar o provider Groq já configurado;
+5. iniciar pela validação local do provider/modelos e seguir para testes diretos FreeLLMAPI;
+6. priorizar benchmark:
+   - `Qwen3.8 27B`;
+   - `GPT-OSS 20B`;
+   - usar `GPT-OSS 120B` apenas como terceiro candidato se a quota/latência permitirem dentro do Free Tier;
+7. manter custo total em R$ 0,00 / US$ 0,00.
+
+A unified API key do FreeLLMAPI não deve ser enviada ao Chat. Se for necessária para configurar o Hermes, deve ser obtida e armazenada localmente sem exposição.
