@@ -51,3 +51,11 @@ O fork herdou `middleware/meta_ads_cli_mcp.py`, relacionado à gestão de anúnc
 - **Etapa C:** após teste de rotina e aprovação separada, avaliar conexão read-only de métricas; não antecipar integração de publicação ou campanhas.
 
 **Não altera** as ADRs existentes (Hermes, Ollama, Telegram, V1 monoempresa, Meta Ads write bloqueado), nem habilita APIs ou credenciais.
+
+
+## Registro de produção — 01/11/2026
+A frente 04 preparou manualmente um primeiro carrossel com sete imagens PNG 1080×1350, legenda e proposta de bio para `@7ps.digital`. **Esse material foi gerado fora do runtime Hermes** e não demonstra implantação nem capacidade dos agentes. Foi entregue como pacote para revisão na conversa de Marketing e Comercial; os arquivos binários não estão versionados no fork.
+
+O roteiro, o conceito visual, o checklist de publicação e as premissas podem ser consultados no documento corporativo: https://github.com/7psdigitaltech-eng/7ps-documenta-o/blob/research/reposicionamento-multissetorial-2026-10-31/docs/04-marketing/2026-11-01-piloto-ig01-carrossel-e-aprovacao.md
+
+**Próximo teste técnico real:** repetir a produção desse mesmo conteúdo via Diretor → Estrategista → Conteúdo → Copywriter → Criativo, comparando qualidade, tempo e revisões. Não cadastrar resultados fictícios e não publicar automaticamente.
