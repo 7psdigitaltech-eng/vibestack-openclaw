@@ -1,6 +1,6 @@
 # TASK-0011 — Configurar Ollama no Hermes e benchmark dos modelos locais
 
-Status: READY
+Status: BLOCKED
 
 ## Objetivo
 
@@ -339,3 +339,7 @@ Contexto aprovado: <tokens>
 Tool calling: <resumo>
 Bloqueio: <nenhum ou curto>
 ```
+
+## Resultado — 2026-11-02
+
+Status: BLOCKED. Provider custom, endpoint Ollama local e contexto solicitado 65536 configurados; ambos os modelos baixados. Primeiro teste direto qwen sem resposta sob pressao de memoria (pelo menos 8,791 GiB de 9,715 GiB); cliente interrompido, modelo descarregado e servicos recuperados. OOM e suporte operacional a 64K nao foram confirmados. Llama e tool calling nao foram testados; nenhum modelo selecionado ou aprovado por falta de evidencia. Detalhes e limitacoes em docs/ops/benchmarks/ollama-models-v1.md.

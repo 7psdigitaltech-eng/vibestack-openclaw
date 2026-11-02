@@ -136,3 +136,7 @@ Status: BLOCKED; Fase 1 pendente. O entrypoint foi ajustado para --skip-build, m
 ## Resultado TASK-0010 — 2026-11-02
 
 Fase 1: PASS. Overlay da imagem local aplicada sem download ou instalacao; imagem anterior preservada pela tag pre-dashboard-fix. Gateway ativo, dashboard e Ollama retornaram HTTP interno 200, e dashboard respondeu HTTP 200 no host Windows. Mapeamentos de 9119 e 11434 em loopback. Container e servicos revalidados apos restart; config.yaml e install_id persistentes preservados. Proximo checkpoint: configuracao e benchmark de modelo local em tarefa propria.
+
+## Benchmark TASK-0011 — 2026-11-02
+
+Status: BLOCKED. Hermes configurado com provider custom, Ollama local e contexto solicitado 65536; modelos qwen3:4b e llama3.2:3b baixados. Primeiro teste qwen interrompido apos pressao de memoria e ausencia de resposta; modelo descarregado, container em execucao e endpoints locais respondendo. Nenhum modelo aprovado ou selecionado por falta de comparacao e testes de ferramenta. Proximo passo: definir teste seguro de contexto e recursos em tarefa autorizada.
