@@ -79,3 +79,7 @@ Plano Free confirmado. Testes diretos qwen3.8-27b e gpt-oss-20b retornaram HTTP 
 ## Google AI Studio / TASK-0016 — 2026-11-02
 
 Status: PARTIAL. Google habilitado e saudavel no FreeLLMAPI; catalogo local inclui gemini-3.1-flash-lite, gemini-3.6-flash, gemini-2.5-flash-lite e gemini-2.5-flash. Nenhum benchmark foi executado porque nao foi possivel comprovar Free Tier e limites ativos do projeto autorizado na sessao acessivel. Sem notas ou modelo selecionado; custo das acoes executadas zero. Direcao provisoria: tools role-scoped/demand-scoped.
+
+### TASK-0016 — Google Free / superficie reduzida
+
+Gemini 3.1 Flash Lite: testes A/B HTTP 200 (1,60/3,30 s), portugues 4/5 e planejamento 2/5 por diagnostico excessivamente confiante sem evidencias; terminal-only e superficie minima de seis funcoes passaram em tool call real sintetico. Gemini 3.6 Flash: A HTTP 200, B HTTP 502. Ferramentas medidas offline: terminal/web/todo = seis funcoes, 8.316 bytes de schemas; estimativa conservadora de sistema 37.838 bytes. Testes usaram --ignore-rules e nao validam contexto pessoal real. Restart e one-shot passaram. Modelo nao aprovado: qualidade minima de planejamento nao demonstrada e chave unificada foi exibida pelo painel na saida da ferramenta; regeneracao necessaria. Custo Free zero; sem billing. Detalhes na TASK-0016.

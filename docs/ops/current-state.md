@@ -164,3 +164,7 @@ Status: BLOCKED. Groq Free e router responderam aos testes diretos de qwen3.8-27
 ## TASK-0016 — 2026-11-02
 
 Status: PARTIAL / USER_ACTION_REQUIRED. Google e Groq habilitados e saudaveis no FreeLLMAPI; catalogo contem candidatos Gemini. Benchmark nao iniciado porque Tier Free, ausencia de billing e limites ativos do projeto Google autorizado nao foram comprovados. Nenhuma inferencia ou mudanca de configuracao Hermes; custo das acoes executadas zero. Tools do Diretor: role-scoped/demand-scoped, sem biblioteca completa por chamada. Aguardar comprovacao do projeto autorizado antes de testar.
+
+## TASK-0016 benchmark Google — 2026-11-02
+
+Status: BLOCKED. Gemini 3.1 Flash Lite respondeu a testes sinteticos e executou terminal real em superficies restritas; planejamento apresentou conclusao sem base suficiente. Gemini 3.6 retornou 502 no planejamento. A chave unificada FreeLLMAPI foi exibida em saida da ferramenta pelo exemplo do painel e deve ser considerada comprometida; regeneracao e atualizacao das integracoes pendentes. Hermes restaurado para Ollama local, contexto 16384 e sem default aprovado; router e servicos ativos. Nenhuma chave de provider foi observada exposta. Custo Free zero. Tools do Diretor permanecem em avaliacao role-scoped/demand-scoped.

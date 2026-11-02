@@ -64,3 +64,7 @@ FreeLLMAPI será adotado como backend primário da V1 se:
 - limites gratuitos forem aceitáveis para validação interna.
 
 Até lá, o status permanece APPROVED_FOR_EVALUATION.
+
+## Evidencia adicional — TASK-0016
+
+Gemini via FreeLLMAPI realizou tool calling real em superficies restritas e com dados sinteticos; resultado de planejamento mostrou diagnostico nao sustentado, e a chave unificada foi exibida pelo painel na saida da ferramenta. A chave precisa ser regenerada antes de nova avaliacao. Tools do Diretor devem ser role-scoped/demand-scoped. A decisao arquitetural permanece APPROVED_FOR_EVALUATION; nenhum backend foi aprovado por esta TASK.

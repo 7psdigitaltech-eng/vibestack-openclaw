@@ -1,6 +1,6 @@
 # TASK-0016 — Validar Google AI Studio Free via FreeLLMAPI com tool surface reduzida
 
-Status: PARTIAL
+Status: BLOCKED
 
 ## Objetivo
 
@@ -487,3 +487,11 @@ Ao retomar:
 - iniciar pelo catálogo FreeLLMAPI e benchmark direto;
 - usar apenas dados sintéticos;
 - preservar custo zero.
+
+## Resultado da retomada — 2026-11-02
+
+Status: BLOCKED. Free Tier sem billing e limites confirmados previamente pelo usuario; apenas prompts e arquivos sinteticos foram enviados. Google e Groq permanecem configurados. Gemini 3.1 Flash Lite: testes diretos A/B HTTP 200, 1,60 s e 3,30 s; portugues 4/5, planejamento 2/5 pela afirmacao nao sustentada sobre o gargalo, embora as hipoteses sejam uteis. Gemini 3.6 Flash: A HTTP 200 em 10,06 s; B HTTP 502 em 6,04 s, sem conclusao de planejamento. Catalogo reporta 1.048.576 tokens e tools para Gemini 3.1, mas nao foi testado preenchimento integral da janela.
+
+Hermes com terminal-only: one-shot PASS e ferramenta real PASS sobre tres arquivos sinteticos, com retorno baseado no resultado. Superficie minima terminal/web/todo: seis funcoes, 8.316 bytes em schemas e estimativa offline conservadora de 37.838 bytes de sistema; one-shot e ferramenta real PASS. A selecao inicial de cinco toolsets resolveu oito funcoes e 15.629 bytes de schemas, com estimativa de sistema 38.814 bytes; optou-se pela superficie menor. Os testes usaram --ignore-rules, sem carregar memoria/regras pessoais; nao validam fluxo com contexto privado ou biblioteca completa. Restart de Hermes e repeticao do one-shot PASS; Ollama sem modelo carregado.
+
+Incidente: ao abrir detalhes do modelo, o painel do FreeLLMAPI exibiu a chave unificada em exemplo de comando na saida da ferramenta. Nao houve exposicao da chave Google ou Groq observada. A chave unificada deve ser considerada comprometida e regenerada pelo usuario; outras integracoes que a usam precisarao ser atualizadas. Nenhum segredo foi escrito nesta documentacao. Hermes restaurado para Ollama local, contexto configurado 16384 e sem modelo default aprovado; chave anterior ainda presente no ambiente persistente, mas nao usada pela configuracao restaurada. Gateway, dashboard, Ollama e router responderam; RAM amostrada 343,9 MiB Hermes e 85 MiB router. Custo Free: zero. Nenhum billing ativado. Groq: configurado, chat direto PASS, nao aprovado como primario, candidato a fallback. Decisao provisoria: tools do Diretor role-scoped/demand-scoped. Proximo passo: regenerar a chave unificada e substituir o valor no ambiente Hermes antes de retomar avaliacao.
