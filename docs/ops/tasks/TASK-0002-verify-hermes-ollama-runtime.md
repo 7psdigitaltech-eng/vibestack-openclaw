@@ -45,6 +45,24 @@ docker compose up -d
 
 Não fazer build, rebuild, pull de modelo, instalação de dependência ou alteração de arquitetura.
 
+## Docker access fallback
+
+A interface do Docker Desktop pode estar ativa mesmo quando a sessão Work/Local não encontra o CLI no PATH.
+
+Antes de declarar Docker indisponível:
+
+1. tentar `docker version`;
+2. se `docker` não for encontrado, localizar o executável padrão no Windows:
+   `C:\Program Files\Docker\Docker\resources\bin\docker.exe`;
+3. usar o caminho absoluto do executável para validar:
+   - `version`;
+   - `context show`;
+   - `info`;
+4. se o executável existir e o Engine responder, continuar a TASK normalmente;
+5. somente registrar `BLOCKED` se o executável não existir ou se o Engine/socket continuar inacessível mesmo pelo caminho absoluto.
+
+Não reinstalar Docker, não alterar permissões do Windows e não mudar contexto automaticamente além de leitura/validação.
+
 ## Limites
 
 - alvo: 5 minutos;
