@@ -1,6 +1,6 @@
 # TASK-0013 — Teste decisivo local: llama3.2:3b em 64K com KV cache q8_0
 
-Status: READY
+Status: SUPERSEDED
 
 ## Objetivo
 
@@ -279,3 +279,12 @@ Restart/persistência: <status>
 Decisão Fase 2: <local aprovado | local não aprovado>
 Bloqueio: <nenhum ou curto>
 ```
+
+
+## Superseded — 2026-11-02
+
+Esta TASK foi suspensa antes da execução.
+
+Motivo: os benchmarks locais já comprovaram o conflito entre o mínimo rígido de 64K do Hermes e o orçamento de memória disponível. Antes de continuar otimizando KV cache local, foi aprovada a avaliação do FreeLLMAPI como router remoto de inferência, conforme ADR-0001 e TASK-0014.
+
+Não executar esta TASK enquanto a avaliação FreeLLMAPI estiver ativa.
