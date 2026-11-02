@@ -1,6 +1,6 @@
 # TASK-0018 — Gemini 3.8 Flash como candidato principal do Diretor
 
-Status: READY
+Status: BLOCKED
 
 ## Objetivo
 
@@ -428,3 +428,9 @@ Custo: R$ 0,00 / US$ 0,00
 Ação humana: <nenhuma | adicionar modelo no FreeLLMAPI>
 Bloqueio: <nenhum ou curto>
 ```
+
+## Resultado — 2026-11-02
+
+Status: BLOCKED. Catalogo local: gemini-3.8-flash presente; nao foi necessario sincronizar/reiniciar o router nem adicionar modelo. A prova unica sintetica fixando gemini-3.8-flash, sem parametros opcionais de amostragem, retornou HTTP 502 em 0,83 s; diagnostico sanitizado do router identificou tentativa no Google com erro upstream 503. Modelo servido e fallback nao puderam ser comprovados. Como o gate exige HTTP 200, benchmark de qualidade, Hermes e tool calling nao foram iniciados e nenhum modelo foi selecionado. Google e Groq estavam healthy no pre-check; router permaneceu healthy, Hermes running, Ollama sem modelo carregado e configuracao sem default. RAM final: Hermes 634,6 MiB e router 84,91 MiB. Free Tier confirmado previamente; custo zero; billing e Premium nao alterados; chave unificada nao rotacionada nem exibida nesta TASK. Nenhum modelo alternativo testado.
+
+O Google restringe o acesso aos modelos Gemini 2.5 a usuarios que os utilizaram anteriormente e recomenda modelos atuais para projetos novos ([notas oficiais de 18-09-2026](https://ai.google.dev/gemini-api/docs/changelog?release=09-18-2026)). Essa restricao e uma explicacao compativel com o 404 observado na TASK-0017; a causa individual nao foi comprovada e nao ha evidencia de falha da chave.

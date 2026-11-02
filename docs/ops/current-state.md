@@ -188,3 +188,7 @@ A exposição permanece registrada como incidente. Novos testes internos não de
 ## TASK-0017 — 2026-11-02
 
 Status: BLOCKED. gemini-2.5-flash consta habilitado no catalogo local, mas a primeira solicitacao sintetica ao Google retornou HTTP 404 e o router classificou a tentativa como model_not_found. Nenhum outro modelo foi testado ou selecionado; Hermes permanece sem default aprovado e apontando ao Ollama local. Google e Groq preservados; sem alteracao de billing ou rotacao de chave; custo Free zero. Proximo passo: reconciliar a disponibilidade real do modelo e o catalogo.
+
+## TASK-0018 — 2026-11-02
+
+Status: BLOCKED. gemini-3.8-flash presente no catalogo; prova unica sintetica recebeu HTTP 502 do router, com tentativa Google classificada como erro upstream 503. Sem benchmark de qualidade, tool calling ou modelo selecionado. Hermes sem default aprovado; Ollama sem carga; Google/Groq preservados. Custo Free zero; sem billing, Premium ou rotacao de chave. O Google restringe o acesso aos modelos Gemini 2.5 a usuarios que os utilizaram anteriormente e recomenda modelos atuais para projetos novos ([notas oficiais de 18-09-2026](https://ai.google.dev/gemini-api/docs/changelog?release=09-18-2026)). Essa restricao e uma explicacao compativel com o 404 observado na TASK-0017; a causa individual nao foi comprovada e nao ha evidencia de falha da chave.

@@ -87,3 +87,7 @@ Gemini 3.1 Flash Lite: testes A/B HTTP 200 (1,60/3,30 s), portugues 4/5 e planej
 ## TASK-0017 — Gemini 2.5 Flash
 
 Status: BLOCKED. Catalogo local: Google, contexto 1048576, tools habilitadas; primeiro teste direto sintetico retornou HTTP 404, classificado pelo router como model_not_found. A causa especifica nao foi comprovada. Testes B/C/D, Hermes e ferramentas nao executados; sem nota e sem modelo selecionado. Nenhum outro modelo testado. Free Tier confirmado; sem alteracao de billing ou rotacao de chave.
+
+## TASK-0018 — Gemini 3.8 Flash
+
+Status: BLOCKED. Catalogo local presente; prova unica sintetica retornou HTTP 502 em 0,83 s, com erro upstream Google 503. Gate de HTTP 200 nao cumprido; qualidade e tool calling nao testados e nenhum modelo selecionado. Sem outros modelos, billing, Premium ou rotacao de chave. O Google restringe o acesso aos modelos Gemini 2.5 a usuarios que os utilizaram anteriormente e recomenda modelos atuais para projetos novos ([notas oficiais de 18-09-2026](https://ai.google.dev/gemini-api/docs/changelog?release=09-18-2026)). Essa restricao e uma explicacao compativel com o 404 observado na TASK-0017; a causa individual nao foi comprovada e nao ha evidencia de falha da chave.

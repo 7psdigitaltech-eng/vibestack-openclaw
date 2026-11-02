@@ -72,3 +72,7 @@ Gemini via FreeLLMAPI realizou tool calling real em superficies restritas e com 
 ## Evidencia adicional — TASK-0017
 
 O catalogo local indicou gemini-2.5-flash como disponivel, mas a primeira chamada ao Google retornou 404 e foi classificada model_not_found pelo router. A disponibilidade real permanece nao comprovada; nenhum backend foi aprovado nesta TASK. O status do ADR permanece APPROVED_FOR_EVALUATION.
+
+## Evidencia adicional — TASK-0018
+
+Gemini 3.8 Flash constou no catalogo local, mas a prova unica retornou HTTP 502 com erro upstream Google 503. Nenhum backend foi aprovado; permanece APPROVED_FOR_EVALUATION. O Google restringe o acesso aos modelos Gemini 2.5 a usuarios que os utilizaram anteriormente e recomenda modelos atuais para projetos novos ([notas oficiais de 18-09-2026](https://ai.google.dev/gemini-api/docs/changelog?release=09-18-2026)). Essa restricao e uma explicacao compativel com o 404 observado na TASK-0017; a causa individual nao foi comprovada e nao ha evidencia de falha da chave.
