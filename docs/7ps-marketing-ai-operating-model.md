@@ -194,6 +194,17 @@ docs/ops/execution-environments.md
 
 Para `LOCAL_DESKTOP`, um preflight de no máximo 2 minutos deve comprovar acesso ao repositório local, Git, Docker e Docker Compose antes de iniciar o orçamento da TASK. Se o executor não tiver acesso real ao host, registrar `BLOCKED` imediatamente, sem tentar contornar com cloud, outro clone ou outro Docker.
 
+### Gate de sincronização GitHub
+
+Para TASKs executadas em `LOCAL_DESKTOP`, `PASS` exige dois resultados:
+
+```text
+EXECUÇÃO LOCAL = PASS
+SINCRONIZAÇÃO GITHUB = PASS
+```
+
+O Work/Local deve fazer commit + push e confirmar o SHA remoto. Se a execução local passar mas o GitHub não for atualizado, o status correto é `PARTIAL`, não `PASS`.
+
 ### Guardrails obrigatórios do Work
 
 Toda TASK técnica deve seguir também:
