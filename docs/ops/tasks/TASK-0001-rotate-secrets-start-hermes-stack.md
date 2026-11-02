@@ -28,6 +28,24 @@ Persistência validada no disco D:.
 
 A imagem `vibestack-openclaw:latest` já foi construída.
 
+## Execution budget
+
+```text
+Execution class: M
+Hard budget: 15 min
+Diagnostic hypotheses: max 2
+Corrective attempts: max 2
+Rebuild allowed: NO
+New dependency allowed: NO
+Architecture change allowed: NO
+Destructive actions allowed: NO
+Fallback source/environment allowed: NO
+```
+
+Aplicar integralmente `docs/ops/execution-guardrails.md`.
+
+Se a stack não puder ser validada dentro deste orçamento sem rebuild, nova dependência, mudança de arquitetura ou terceira linha de investigação, registrar `BLOCKED` e encerrar. Não tentar “resolver a qualquer custo”.
+
 ## Restrições
 
 1. Não alterar arquitetura.
