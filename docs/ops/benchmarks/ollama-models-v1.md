@@ -71,3 +71,7 @@ Comparacao remota pendente. A infraestrutura FreeLLMAPI e Hermes passou no pre-c
 ### Retomada TASK-0015 — 2026-11-02
 
 Groq habilitado e saudavel no router; catalogo inclui Qwen3.8 27B e GPT-OSS 20B. Comparacao remota nao executada: Free Tier da conta Groq nao foi comprovado na sessao acessivel; COST_GUARD=TRIGGERED. Nenhum resultado, nota ou vencedor remoto. Custo da retomada zero.
+
+### Benchmark FreeLLMAPI/Groq — 2026-11-02
+
+Plano Free confirmado. Testes diretos qwen3.8-27b e gpt-oss-20b retornaram HTTP 200; portugues 4/5 e planejamento 3/5 indicativos para ambos. Qwen A 0,65 s e B completo 2,91 s; GPT A 0,69 s e B completo 1,45 s. B com limite inicial 512 tokens truncou para ambos; repeticao com 1536 terminou. No Hermes, ambos receberam 413 com conjunto completo de ferramentas; com terminal somente, one-shot passou mas tool calling recebeu 429 e nao foi executado. Resultados locais 16K anteriores: qwen 20/85 e llama 33/85, com Hermes recusando contexto abaixo de 64K; notas de metodologias diferentes nao sao comparaveis diretamente. Nenhum modelo remoto aprovado; custo Free zero. Detalhes em TASK-0015.

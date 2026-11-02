@@ -1,6 +1,6 @@
 # TASK-0015 — Configurar Groq no FreeLLMAPI e validar Hermes remoto
 
-Status: PARTIAL
+Status: BLOCKED
 
 ## Objetivo
 
@@ -509,3 +509,9 @@ AUTHORIZED_COST=R$ 0,00 / US$ 0,00
 O Work NÃO deve bloquear novamente por falta de comprovação do plano gratuito, desde que a organização/projeto em uso continue sendo a mesma sessão Groq já configurada pelo usuário.
 
 Se qualquer tela futura indicar mudança de plano, billing, Developer/paid ou cobrança, acionar novamente o STOP de custo.
+
+## Benchmark remoto — 2026-11-02
+
+Status: BLOCKED. Plano Free, custo autorizado zero e conta autorizada comprovados conforme evidencia manual anterior. Provider Groq habilitado/saudavel; chave unificada existente armazenada em ambiente persistente Hermes com permissao restrita, sem exposicao. Catalogo reporta qwen3.8-27b com 262144 de contexto e gpt-oss-20b com 131072; suporte a ferramentas conforme catalogo/evidencia anterior. Testes diretos A/B pelo FreeLLMAPI retornaram HTTP 200 com modelos qwen/qwen3.8-27b e openai/gpt-oss-20b. A em portugues, nota indicativa 4/5 para ambos; B completo no limite 1536: propostas priorizadas, nota indicativa 3/5 para ambos devido a premissas nao demonstradas. Primeiras respostas B com 512 tokens foram truncadas. Tempo A: qwen 0,65 s, gpt 0,69 s; B completo: qwen 2,91 s, gpt 1,45 s. Somente Groq estava configurado; cabecalhos nao identificaram provider ou fallback explicitamente.
+
+Hermes com conjunto completo de ferramentas recebeu HTTP 413 para ambos os modelos. Teste restrito a terminal respondeu HERMES REMOTO OK com ambos, mas testes de ferramenta real receberam HTTP 429 mesmo apos pausa, sem chamada de ferramenta comprovada. Hermes imprimiu erro apesar de exit code 0. Sem tool calling PASS, nenhum candidato aprovado ou selecionado: GROQ NÃO APROVADO COMO BACKEND DO DIRETOR nesta avaliacao; resultado nao e reprovacao definitiva dos modelos. Terceiro candidato nao testado por limite de quota. Configuracao Hermes restaurada para provider custom, Ollama local, contexto 16384 e sem model.default; chave unificada permanece no ambiente persistente restrito. Gateway, dashboard, Ollama e router responderam; nenhum modelo Ollama carregado. RAM observada apos restauracao: 265,1 MiB Hermes + 86,74 MiB router. Nenhuma mudanca de plano/billing; custo no plano Free confirmado: R$ 0,00 / US$ 0,00. Proximo passo: avaliar limites de payload/quota e confiabilidade de ferramentas em tarefa propria.

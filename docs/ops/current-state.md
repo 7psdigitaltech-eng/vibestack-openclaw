@@ -156,3 +156,7 @@ Status: PARTIAL / USER_ACTION_REQUIRED. Infraestrutura validada; o Chrome dispon
 ## Retomada TASK-0015 — 2026-11-02
 
 Status: PARTIAL / USER_ACTION_REQUIRED; COST_GUARD=TRIGGERED. Provider Groq configurado manualmente, chave habilitada e saudavel no FreeLLMAPI. Nao foi possivel confirmar Free Tier no console Groq acessivel; nenhum benchmark remoto ou alteracao de provider Hermes foi executado. Custo desta retomada zero. Aguardando comprovacao do plano gratuito na conta autorizada.
+
+## TASK-0015 benchmark remoto — 2026-11-02
+
+Status: BLOCKED. Groq Free e router responderam aos testes diretos de qwen3.8-27b e gpt-oss-20b; Hermes com ferramentas completas recebeu 413 e os testes de ferramenta restritos receberam 429. Nenhum tool calling real comprovado, portanto nenhum modelo aprovado ou selecionado. Hermes restaurado para endpoint Ollama local, contexto 16384 e sem modelo default; chave unificada mantida no ambiente persistente restrito. Servicos ativos e Ollama sem modelo carregado. Nenhuma mudanca de billing; custo Free zero. Proximo passo: avaliar limites de payload/quota em tarefa propria.
