@@ -50,6 +50,12 @@ Contém:
 
 Contém a sequência de implementação por fases e critérios de aceite, desde a simplificação da stack até Telegram, profiles, skills, Kanban, ferramentas criativas e preparação do Gestor de Tráfego.
 
+### 4. Modelo operacional Chat + GitHub + Work
+
+[`7ps-marketing-ai-operating-model.md`](./7ps-marketing-ai-operating-model.md)
+
+Define o protocolo oficial do projeto para separar planejamento e decisões no Chat, documentação e evidências no GitHub e execução técnica no Work, incluindo TASK IDs, pré-check, pós-check, rollback, política de segredos e retorno resumido ao Chat.
+
 ---
 
 ## Decisões V1 consolidadas
