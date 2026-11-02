@@ -23,6 +23,10 @@ Não assumir acesso a:
 
 ### LOCAL_DESKTOP
 
+**Superfície padrão:** ChatGPT Work em modo **Local**.
+
+Não selecionar Work/Cloud para tarefas deste tipo.
+
 Usar quando a tarefa depende de:
 
 - repositório local;
@@ -74,6 +78,22 @@ Para tarefas `LOCAL_DESKTOP`, o executor precisa estar numa sessão/superfície 
 
 Se o executor estiver em ambiente cloud/sandbox sem acesso ao host, deve retornar BLOCKED no preflight.
 
+Para o fluxo atual da 7Ps, a seleção operacional é:
+
+```text
+TASK Execution target = LOCAL_DESKTOP
+        ↓
+abrir Work
+        ↓
+selecionar Local
+        ↓
+executar preflight
+        ↓
+somente após PASS executar a TASK
+```
+
+Work/Cloud é apropriado para `REPO_CLOUD`, não para Docker/filesystem do PC.
+
 ## 4. Cabeçalho obrigatório nas TASKs
 
 Toda TASK técnica deve declarar:
@@ -113,3 +133,26 @@ Somente após PASS começa o orçamento da TASK.
 Se tarefas LOCAL_DESKTOP forem frequentes e o Work não tiver acesso local consistente, avaliar uma camada de execução dedicada, como um runner local controlado, em tarefa arquitetural separada.
 
 Essa decisão não deve ser implementada silenciosamente por uma TASK operacional.
+
+
+## 7. Sincronização obrigatória com GitHub
+
+Uma TASK local não é considerada concluída apenas porque os comandos locais passaram.
+
+Antes de retornar `PASS`, o Work/Local deve:
+
+1. atualizar os documentos exigidos pela TASK;
+2. criar commit real;
+3. fazer push para o remote autorizado;
+4. confirmar que o commit existe em `origin`;
+5. retornar o SHA real (mínimo 7 caracteres, não placeholder).
+
+Se a execução local passou mas push/commit falhou:
+
+```text
+Status: PARTIAL
+Local execution: PASS
+GitHub synchronization: FAIL
+```
+
+Nunca retornar `PASS` com SHA fictício, exemplo, placeholder ou commit apenas local.
