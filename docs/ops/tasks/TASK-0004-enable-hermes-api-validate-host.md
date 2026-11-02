@@ -1,6 +1,6 @@
 # TASK-0004 — Habilitar Hermes API e validar portas no host
 
-Status: READY
+Status: BLOCKED
 
 ## Objetivo
 
@@ -144,3 +144,15 @@ Host ports: <status>
 Desvios: <curto>
 Bloqueio: <curto ou nenhum>
 ```
+
+## Resultado — 2026-11-02
+
+Status: BLOCKED
+API_SERVER_ENABLED=true configurado localmente e em .env.example; configuracao confirmada no container, sem expor segredos. Container recriado sem rebuild, em execucao sem reinicios observados.
+
+- Listeners internos: 11434 aberto, 8642 fechado, 9119 aberto.
+- Mapeamentos Docker: 11434, 8642 e 9119 publicados em 127.0.0.1.
+- Testes HTTP no host Windows, sem proxy: 11434 /, 8642 /health e 9119 / sem resposta HTTP (000).
+- Log Hermes verificado por indicador sanitizado: nenhum erro identificado.
+
+Bloqueio: API sem listener interno e respostas HTTP do host nao validadas. Sem rebuild ou mudanca arquitetural. Proximo passo: investigar inicializacao da API e acesso host em tarefa autorizada.

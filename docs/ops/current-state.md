@@ -112,3 +112,7 @@ Status: BLOCKED. Docker Engine acessivel; Compose nao identificou containers do 
 ## Verificacao TASK-0003 — 2026-11-02
 
 Status: BLOCKED. Os seis segredos identificados foram rotacionados e validados por presenca e tamanho, sem exposicao. A stack foi iniciada com a imagem existente, sem rebuild: container em execucao, sem reinicios observados, e processo Hermes gateway presente. OpenClaw e Evolution seguem desabilitados na configuracao local. As portas 11434, 8642 e 9119 nao retornaram HTTP no host; no container 11434 e 9119 estavam abertas e 8642 fechada. Runtime nao validado. Proximo passo: diagnosticar a exposicao dos servicos e inicializacao da API.
+
+## Verificacao TASK-0004 — 2026-11-02
+
+Status: BLOCKED. API_SERVER_ENABLED habilitado no ambiente e no exemplo; container recriado sem rebuild, em execucao sem reinicios observados. Listeners internos: 11434 e 9119 abertos, 8642 fechado. As tres portas estao mapeadas em 127.0.0.1 pelo Docker, mas os testes HTTP no host Windows retornaram 000. Nenhum segredo foi registrado. Proximo passo: investigar inicializacao da API e acesso host em tarefa autorizada.
