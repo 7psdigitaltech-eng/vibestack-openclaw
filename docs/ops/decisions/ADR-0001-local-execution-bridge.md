@@ -1,6 +1,6 @@
 # ADR-0001 — Ponte de execução local para TASKs LOCAL_DESKTOP
 
-Status: PROPOSED
+Status: SUPERSEDED
 Data: 2026-11-02
 
 ## Contexto
@@ -82,11 +82,13 @@ Custo operacional:
 - requer bootstrap inicial no Windows;
 - depois reduz bastante a interação manual.
 
-## Decisão recomendada
+## Decisão atualizada
 
-Para uso recorrente, preferir a **Opção B**, com repositório privado de operações e runner self-hosted dedicado.
+A execução em **Work/Local** foi testada pelo usuário e conseguiu operar o ambiente local, ao contrário da tentativa em Work/Cloud.
 
-A Opção A pode permanecer como caminho para tarefas pontuais quando uma sessão Work provar acesso LOCAL_DESKTOP no preflight.
+Portanto, a decisão operacional atual é usar **Opção A — Work/Local + preflight** para TASKs `LOCAL_DESKTOP`.
+
+A Opção B (self-hosted runner privado) fica apenas como alternativa futura caso Work/Local se mostre inconsistente, indisponível ou insuficiente para automação recorrente.
 
 ## Não autorizado por este ADR
 
