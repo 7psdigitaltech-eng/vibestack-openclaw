@@ -64,3 +64,13 @@ Iniciar a **Fase 1 do roadmap**:
 6. validar tecnicamente antes de criar os sete profiles.
 
 Nenhuma credencial Meta Ads deve ser necessária nessa etapa.
+
+
+## Atualização de documentação — 02/11/2026 | Reels por skill
+
+- Adicionada skill de **edição de Reels no Codex** em `.agents/skills/7ps-reels-editor/SKILL.md`, com briefing e checklist de qualidade; não altera a configuração do Hermes nem concede acesso de publicação.
+- Produzido na frente 04, **fora do runtime Hermes**, um protótipo de Reel faceless 1080×1920, cerca de 21 segundos, em Python/Pillow e FFmpeg. Os binários foram entregues como artefatos na conversa; não foram versionados neste repositório.
+- A skill ainda **não foi testada em um clone local deste fork** nem acionada pelos sete profiles. O status de implementação funcional da agência permanece **não verificado neste registro**; não inferir que o ambiente local evoluiu sem novos testes.
+- Instagram `@7ps.digital`: nenhuma conexão/API de publicação orgânica, campanha ou acesso de escrita habilitado. Meta Ads MCP não é Instagram Content Publishing.
+- Próximos testes propostos: uso real da skill em Codex; gravação voluntária de voz/talking head para sincronização de legendas e motion; validação dos agentes Hermes; somente após autorização, avaliação de avatar/voz com consentimento.
+- Documentação corporativa detalhada: https://github.com/7psdigitaltech-eng/7ps-documenta-o/blob/research/reposicionamento-multissetorial-2026-10-31/docs/04-marketing/2026-11-02-producao-de-reels-com-skills-e-agentes-v1.md
