@@ -400,3 +400,32 @@ RAM stack: <valor>
 Ação humana: <nenhuma | curta>
 Bloqueio: <nenhum ou curto>
 ```
+
+
+## Estado confirmado manualmente — Google AI Studio
+
+O usuário concluiu manualmente a criação e configuração da chave Google AI Studio no FreeLLMAPI.
+
+Estado conhecido para retomada:
+
+- conta autorizada: `edujr.android@gmail.com`;
+- chave Google AI Studio: criada manualmente;
+- provider Google: configurado no FreeLLMAPI;
+- nenhuma chave deve ser exibida, copiada para documentação ou enviada ao Chat;
+- não repetir login;
+- não criar nova conta;
+- não criar nova API key;
+- não criar novo projeto se não for necessário;
+- não habilitar billing;
+- custo autorizado permanece `R$ 0,00 / US$ 0,00`.
+
+Ao retomar esta TASK:
+
+1. iniciar pela validação do provider Google no FreeLLMAPI;
+2. confirmar key/provider healthy sem exibir segredo;
+3. listar os modelos elegíveis com contexto >=64K e function/tool calling;
+4. confirmar os limites ativos do Free Tier;
+5. executar os testes diretos e depois Hermes com `terminal` apenas;
+6. não repetir qualquer etapa de autenticação já concluída.
+
+Se houver qualquer evidência de billing/pago, interromper e acionar o COST_GUARD.
