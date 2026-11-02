@@ -70,6 +70,51 @@ e encerrar imediatamente.
 
 Não tentar instalar Docker, alterar permissões, mudar de ambiente, clonar em outro lugar, usar Docker remoto ou executar fallback em cloud sem autorização explícita.
 
+## 2A. Bootstrap de sincronização do clone
+
+Existe uma exceção controlada antes do preflight: o clone local pode estar desatualizado e, por isso, ainda não conter a TASK mais recente.
+
+Nesse caso, o Work/Local pode executar um **bootstrap de sincronização**, com orçamento máximo de 2 minutos, antes de exigir a leitura da TASK.
+
+O bootstrap pode somente:
+
+1. entrar no diretório local esperado;
+2. executar `git status --porcelain`;
+3. executar `git fetch origin`;
+4. verificar a relação entre `HEAD` e `origin/main`;
+5. se o working tree estiver limpo, sem commits locais pendentes e a branch estiver apenas atrás de `origin/main`, executar fast-forward seguro:
+   `git merge --ff-only origin/main`;
+6. confirmar que os arquivos operacionais esperados passaram a existir.
+
+O bootstrap NÃO pode:
+
+- descartar mudanças locais;
+- usar `git reset --hard`;
+- usar `git clean`;
+- fazer rebase;
+- resolver conflito automaticamente;
+- forçar push;
+- trocar de branch;
+- alterar Docker;
+- editar código;
+- executar a TASK.
+
+Se o clone estiver dirty, ahead, diverged ou houver conflito:
+
+```text
+BOOTSTRAP_SYNC=BLOCKED
+```
+
+e encerrar.
+
+Se o fast-forward seguro passar:
+
+```text
+BOOTSTRAP_SYNC=PASS
+```
+
+e então iniciar o preflight normal da TASK.
+
 ## 3. Regra para sessões do Work
 
 Não presumir que uma sessão do Work possui acesso local só porque a TASK menciona um caminho Windows.
