@@ -1,0 +1,23 @@
+# Briefing de Reel — 7PS
+
+- **ID da peça:** IG-RL-000
+- **Data e responsável:**
+- **Tema e hipótese de conteúdo:**
+- **Status de posicionamento e decisão de referência:**
+- **Público/vertical (se houver):**
+- **Problema real a explicar (sem presumir que afeta a empresa específica):**
+- **Objetivo editorial (clareza, salvamentos, conversa, alcance):**
+- **Mensagem central em uma frase:**
+- **Gancho dos primeiros 3 segundos:**
+- **Formato:** talking head gravado / avatar autorizado / motion faceless
+- **Fonte da voz:** gravação própria / clonagem validada / TTS licenciado / silencioso
+- **Roteiro palavra por palavra:**
+- **Cenas:** cena, duração, visual, texto, áudio e efeito (uma linha por cena)
+- **Assets disponíveis e direito de uso:**
+- **Logo e guia de marca aprovados?:**
+- **Ferramentas e custo autorizado:**
+- **CTA e legenda:**
+- **Prazo/ritmo de publicação (não agendar sem aprovação):**
+- **Revisor humano e status:** PENDENTE_APROVACAO
+- **Dados reais para medir após a publicação:** impressões, alcance, compartilhamentos, retenção quando acessível, DMs qualificadas e tempo/custo de produção
+- **Fontes de claims:** links e status; ausentes = N/D
