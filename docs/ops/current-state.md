@@ -120,3 +120,7 @@ Status: BLOCKED. API_SERVER_ENABLED habilitado no ambiente e no exemplo; contain
 ## Verificacao TASK-0005 — 2026-11-02
 
 Status: BLOCKED. Ambiente persistente Hermes alinhado com chave existente e permissao restrita; servico reiniciado sem rebuild. Container em execucao e gateway presente; 11434 e 9119 abertos internamente, 8642 fechado e health inacessivel. As tres portas estao publicadas em 127.0.0.1. A busca sanitizada nos logs nao identificou erro relevante. Proximo passo: diagnostico direcionado da inicializacao da API.
+
+## Restauracao TASK-0007 — 2026-11-02
+
+Checkpoint pos-build restaurado: imagem vibestack-openclaw:latest preservada; nenhum container do projeto; diretorios persistentes Hermes e Ollama vazios. Estado anterior preservado em D:/Docker/7ps-marketing/data/backups/reset-postbuild-2026-11-02/. Segredos rotacionados preservados; flags e mounts validados; linha experimental API_SERVER_ENABLED=true removida. Nenhum volume removido ou rebuild executado. Proximo passo: primeiro startup controlado.

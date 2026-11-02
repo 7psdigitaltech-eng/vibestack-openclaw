@@ -1,6 +1,6 @@
 # TASK-0007 — Restaurar checkpoint pós-build
 
-Status: READY
+Status: PASS
 
 ## Objetivo
 
@@ -175,3 +175,7 @@ Backup: <status>
 Env: <checkpoint/status>
 Bloqueio: <nenhum ou curto>
 ```
+
+## Resultado — 2026-11-02
+
+Status: PASS. Container do projeto removido com compose down sem -v; imagem existente preservada e nenhum build executado. Conteudo de Hermes e Ollama movido para D:/Docker/7ps-marketing/data/backups/reset-postbuild-2026-11-02/ nas pastas hermes-before-reset (38 itens de primeiro nivel) e ollama-before-reset (2 itens). Diretorios originais vazios. Linha experimental removida do .env local e do exemplo; segredos preservados sem exibicao. Flags e cinco mounts em D:/Docker/7ps-marketing/data/ validados. Nenhum container iniciado apos limpeza. Proximo passo: primeiro startup controlado.
