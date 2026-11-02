@@ -152,3 +152,7 @@ Status: PASS. FreeLLMAPI v0.16.16 instalado e saudavel; painel e /api/ping respo
 ## TASK-0015 — 2026-11-02
 
 Status: PARTIAL / USER_ACTION_REQUIRED. Infraestrutura validada; o Chrome disponivel apresentou login Groq e a conta nao foi confirmada. Nenhuma API key ou provider Groq foi configurado; Hermes permanece sem alteracao de modelo/provider. Custo das acoes executadas: zero. Aguardando console Groq autenticado na conta autorizada e confirmacao do Free Tier para retomar.
+
+## Retomada TASK-0015 — 2026-11-02
+
+Status: PARTIAL / USER_ACTION_REQUIRED; COST_GUARD=TRIGGERED. Provider Groq configurado manualmente, chave habilitada e saudavel no FreeLLMAPI. Nao foi possivel confirmar Free Tier no console Groq acessivel; nenhum benchmark remoto ou alteracao de provider Hermes foi executado. Custo desta retomada zero. Aguardando comprovacao do plano gratuito na conta autorizada.

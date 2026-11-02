@@ -67,3 +67,7 @@ Decisão: **NENHUM MODELO LOCAL APROVADO**. A maior nota direta do llama não su
 ## Local vs FreeLLMAPI/Groq — TASK-0015
 
 Comparacao remota pendente. A infraestrutura FreeLLMAPI e Hermes passou no pre-check; o console Groq no Chrome disponivel apresentou tela de login, sem conta verificavel. Nenhuma chamada remota, chave ou teste de modelo foi realizado; nao ha pontuacao ou vencedor remoto. Custo das acoes executadas: zero. USER_ACTION_REQUIRED: deixar o console Groq autenticado na conta autorizada e retomar sob Free Tier comprovado.
+
+### Retomada TASK-0015 — 2026-11-02
+
+Groq habilitado e saudavel no router; catalogo inclui Qwen3.8 27B e GPT-OSS 20B. Comparacao remota nao executada: Free Tier da conta Groq nao foi comprovado na sessao acessivel; COST_GUARD=TRIGGERED. Nenhum resultado, nota ou vencedor remoto. Custo da retomada zero.

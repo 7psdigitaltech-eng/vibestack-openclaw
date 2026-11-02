@@ -480,3 +480,7 @@ Ao retomar esta TASK:
 7. manter custo total em R$ 0,00 / US$ 0,00.
 
 A unified API key do FreeLLMAPI não deve ser enviada ao Chat. Se for necessária para configurar o Hermes, deve ser obtida e armazenada localmente sem exposição.
+
+## Retomada — 2026-11-02
+
+Status: PARTIAL; USER_ACTION_REQUIRED; COST_GUARD=TRIGGERED. Groq configurado manualmente pelo usuario; dashboard local mostra 1 provider, 1 chave Groq habilitada e saudavel, e 7 modelos na cadeia. Catalogo apresenta Qwen3.8 27B e GPT-OSS 20B; contexto e ferramentas conforme evidencia manual acima. Stack healthy, gateway ativo, dashboard, Ollama e ping interno HTTP 200; nenhum modelo Ollama carregado; baseline 465,1 MiB Hermes + 83,18 MiB router. O console Groq acessivel na sessao Chrome Trabalho apresentou login; nao foi possivel comprovar o plano da conta. O saldo estimado do router nao comprova Free Tier Groq. Nenhuma inferencia remota, alteracao de provider Hermes, criacao de chave ou login foi realizada nesta retomada; custo das acoes executadas zero. Acao humana: comprovar na conta Groq autorizada que o plano ativo e Free Tier sem cobranca e disponibilizar essa confirmacao para continuar, sem informar credenciais no Chat.
