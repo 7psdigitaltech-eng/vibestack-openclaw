@@ -1,6 +1,6 @@
 # TASK-0002 — Verificar runtime atual Hermes + Ollama
 
-Status: READY
+Status: BLOCKED
 
 ## Objetivo
 
@@ -90,3 +90,8 @@ Dashboard: <status>
 Desvios: <curto>
 Bloqueio: <curto ou nenhum>
 ```
+
+## Resultado da verificacao — 2026-11-02
+
+Status: BLOCKED
+Docker Engine acessivel fora do isolamento; Compose nao identificou containers do projeto, inclusive parados. As portas 11434, 8642 e 9119 nao responderam. As quatro opcoes solicitadas no arquivo local coincidem com os valores esperados. Nenhum container foi criado ou iniciado; nao houve build nem rotacao de segredos. A existencia e rotacao de segredos anteriores permanecem sem evidencia suficiente. Proximo passo: decidir como estabelecer o runtime e comprovar a rotacao antes da operacao.

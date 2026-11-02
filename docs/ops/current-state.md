@@ -104,3 +104,7 @@ Nenhuma alteração local foi realizada por essa tentativa.
 ## Próximo checkpoint
 
 Executar `TASK-0001B` em Work/Local para sincronizar o clone por fast-forward seguro e, na mesma execução, reconciliar o resultado local anterior sem repetir ações Docker.
+
+## Verificacao TASK-0002 — 2026-11-02
+
+Status: BLOCKED. Docker Engine acessivel; Compose nao identificou containers do projeto, inclusive parados. Ollama, API Hermes e dashboard nao responderam nas portas locais previstas. As quatro opcoes solicitadas coincidem com os valores esperados no arquivo local. Nenhum container foi criado ou iniciado, e a rotacao anterior continua sem evidencia suficiente. Decidir como estabelecer o runtime e comprovar a rotacao antes da operacao.
