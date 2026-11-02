@@ -1,6 +1,6 @@
 # TASK-0010 — Implantar correção do dashboard sobre a imagem local existente
 
-Status: READY
+Status: PASS
 
 ## Objetivo
 
@@ -206,3 +206,6 @@ Restart/persistência: <status>
 Host Windows: <status>
 Bloqueio: <nenhum ou curto>
 ```
+## Resultado — 2026-11-02
+
+Status: PASS. Overlay local construida a partir da imagem preservada na tag pre-dashboard-fix, com COPY e chmod, sem pull, rede ou instalacao. Container recriado com entrypoint --skip-build. Gateway ativo; listeners 9120, 9119 e 11434 abertos; dashboard 9119 e Ollama 11434 retornaram HTTP interno 200. Mapeamentos 9119 e 11434 em loopback. Windows host confirmou dashboard HTTP 200. Um restart executado; servicos e HTTP 200 revalidados, container em execucao sem restart loop. Configuracao config.yaml e install_id persistentes permaneceram identicos; .env persistente estava ausente antes do restart. Fase 1: PASS. Proximo checkpoint: configuracao e benchmark de modelo local em tarefa propria.

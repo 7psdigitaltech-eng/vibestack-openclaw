@@ -132,3 +132,7 @@ Status: BLOCKED; Fase 1 pendente. Stack iniciada a partir do checkpoint restaura
 ## Verificacao TASK-0009 — 2026-11-02
 
 Status: BLOCKED; Fase 1 pendente. O entrypoint foi ajustado para --skip-build, mas nao implantado. Rebuild com cache foi interrompido ao iniciar download de uma nova imagem-base, antes das etapas de instalacao. Imagem anterior e container em execucao preservados; restart e persistencia nao validados. Proximo passo: definir reproducao da base/cache ou escopo autorizado de rebuild.
+
+## Resultado TASK-0010 — 2026-11-02
+
+Fase 1: PASS. Overlay da imagem local aplicada sem download ou instalacao; imagem anterior preservada pela tag pre-dashboard-fix. Gateway ativo, dashboard e Ollama retornaram HTTP interno 200, e dashboard respondeu HTTP 200 no host Windows. Mapeamentos de 9119 e 11434 em loopback. Container e servicos revalidados apos restart; config.yaml e install_id persistentes preservados. Proximo checkpoint: configuracao e benchmark de modelo local em tarefa propria.
