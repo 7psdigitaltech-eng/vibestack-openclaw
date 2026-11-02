@@ -28,6 +28,20 @@ Persistência validada no disco D:.
 
 A imagem `vibestack-openclaw:latest` já foi construída.
 
+## Execution target
+
+```text
+Execution target: LOCAL_DESKTOP
+Local repo path: D:\Docker\7ps-marketing\repo
+Required capabilities:
+- local filesystem
+- Git
+- Docker Desktop
+- Docker Compose
+```
+
+Aplicar o preflight obrigatório de `docs/ops/execution-environments.md` antes de iniciar o orçamento da TASK.
+
 ## Execution budget
 
 ```text
