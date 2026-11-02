@@ -108,3 +108,7 @@ Executar `TASK-0001B` em Work/Local para sincronizar o clone por fast-forward se
 ## Verificacao TASK-0002 — 2026-11-02
 
 Status: BLOCKED. Docker Engine acessivel; Compose nao identificou containers do projeto, inclusive parados. Ollama, API Hermes e dashboard nao responderam nas portas locais previstas. As quatro opcoes solicitadas coincidem com os valores esperados no arquivo local. Nenhum container foi criado ou iniciado, e a rotacao anterior continua sem evidencia suficiente. Decidir como estabelecer o runtime e comprovar a rotacao antes da operacao.
+
+## Verificacao TASK-0003 — 2026-11-02
+
+Status: BLOCKED. Os seis segredos identificados foram rotacionados e validados por presenca e tamanho, sem exposicao. A stack foi iniciada com a imagem existente, sem rebuild: container em execucao, sem reinicios observados, e processo Hermes gateway presente. OpenClaw e Evolution seguem desabilitados na configuracao local. As portas 11434, 8642 e 9119 nao retornaram HTTP no host; no container 11434 e 9119 estavam abertas e 8642 fechada. Runtime nao validado. Proximo passo: diagnosticar a exposicao dos servicos e inicializacao da API.

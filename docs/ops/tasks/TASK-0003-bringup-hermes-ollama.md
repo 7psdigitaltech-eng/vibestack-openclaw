@@ -1,6 +1,6 @@
 # TASK-0003 — Bring-up definitivo Hermes + Ollama
 
-Status: READY
+Status: BLOCKED
 
 ## Objetivo
 
@@ -116,3 +116,8 @@ Dashboard: <status>
 Desvios: <curto>
 Bloqueio: <curto ou nenhum>
 ```
+
+## Resultado — 2026-11-02
+
+Status: BLOCKED
+Os seis segredos foram rotacionados com geracao criptografica, validados por presenca e tamanho (64 caracteres), sem registrar valores. A imagem existente foi usada sem rebuild. Container criado e em execucao, sem reinicios observados; processo do gateway Hermes presente. OpenClaw e Evolution desabilitados na configuracao local. As tres portas publicadas nao retornaram resposta HTTP no host; no container as portas 11434 e 9119 estavam abertas e 8642 fechada. Os criterios de runtime nao foram satisfeitos. Nao foi alterada arquitetura nem instalado modelo. Proximo passo: diagnosticar a exposicao dos servicos e a inicializacao da API em tarefa autorizada.
