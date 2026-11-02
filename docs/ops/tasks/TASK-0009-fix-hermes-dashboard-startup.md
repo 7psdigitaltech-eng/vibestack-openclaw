@@ -1,6 +1,6 @@
 # TASK-0009 — Corrigir startup do dashboard Hermes e concluir Fase 1
 
-Status: READY
+Status: BLOCKED
 
 ## Contexto confirmado
 
@@ -189,3 +189,7 @@ Restart/persistência: <status>
 Host Windows: <status>
 Bloqueio: <nenhum ou curto>
 ```
+
+## Resultado — 2026-11-02
+
+Status: BLOCKED. Pre-check confirmou container com imagem esperada, gateway ativo, Ollama HTTP interno 200 e bundle presente. O entrypoint foi ajustado para --skip-build, mas a alteracao nao foi implantada nem validada. O rebuild autorizado com cache resolveu uma imagem-base diferente e iniciou download de camadas nao armazenadas; foi interrompido antes de executar etapas de instalacao, para respeitar a proibicao de instalar dependencias. A imagem anterior e o container em execucao permanecem preservados. Nao houve recriacao, restart ou teste de persistencia. Fase 1 permanece bloqueada. Proximo passo: definir como reproduzir a base e o cache originais ou autorizar escopo de rebuild apropriado.

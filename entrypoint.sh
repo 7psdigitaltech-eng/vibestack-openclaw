@@ -311,7 +311,7 @@ HERMES_WEB_PUBLIC_PORT="${HERMES_WEB_PORT:-9119}"
 HERMES_WEB_INTERNAL_PORT="${HERMES_WEB_INTERNAL_PORT:-9120}"
 (
   HERMES_HOME="$HERMES_HOME" \
-    hermes dashboard --host 127.0.0.1 --port "$HERMES_WEB_INTERNAL_PORT" --no-open --tui
+    hermes dashboard --host 127.0.0.1 --port "$HERMES_WEB_INTERNAL_PORT" --no-open --skip-build
 ) >/var/log/hermes-web.log 2>&1 &
 HERMES_WEB_PID=$!
 echo "[entrypoint] hermes dashboard iniciado em 127.0.0.1:$HERMES_WEB_INTERNAL_PORT (pid=$HERMES_WEB_PID, chat-tab=on, log=/var/log/hermes-web.log)"

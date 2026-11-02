@@ -128,3 +128,7 @@ Checkpoint pos-build restaurado: imagem vibestack-openclaw:latest preservada; ne
 ## Startup TASK-0008 — 2026-11-02
 
 Status: BLOCKED; Fase 1 pendente. Stack iniciada a partir do checkpoint restaurado, sem rebuild. Container em execucao e gateway Hermes ativo; Ollama responde HTTP interno 200 na 11434. Bridge do dashboard 9119 aberta, mas HTTP interno encerra sem resposta e servidor interno 9120 fechado. Portas 9119 e 11434 publicadas em loopback. Restart e persistencia nao validados porque o dashboard nao estabilizou; acesso host nao verificado. Proximo passo: diagnosticar inicializacao do dashboard.
+
+## Verificacao TASK-0009 — 2026-11-02
+
+Status: BLOCKED; Fase 1 pendente. O entrypoint foi ajustado para --skip-build, mas nao implantado. Rebuild com cache foi interrompido ao iniciar download de uma nova imagem-base, antes das etapas de instalacao. Imagem anterior e container em execucao preservados; restart e persistencia nao validados. Proximo passo: definir reproducao da base/cache ou escopo autorizado de rebuild.
