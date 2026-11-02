@@ -184,6 +184,33 @@ Não criar ADR para decisões pequenas ou operacionais.
 
 ## 4. Regras para execução
 
+### Guardrails obrigatórios do Work
+
+Toda TASK técnica deve seguir também:
+
+```text
+docs/ops/execution-guardrails.md
+```
+
+Esses guardrails definem orçamento de execução, limite de tentativas, caminho mínimo, fail-closed, proibição de fallback silencioso e gatilhos de STOP/BLOCKED.
+
+Cada TASK técnica deve declarar explicitamente:
+
+```text
+Execution class: S | M | L
+Hard budget:
+Diagnostic hypotheses:
+Corrective attempts:
+Rebuild allowed:
+New dependency allowed:
+Architecture change allowed:
+Destructive actions allowed:
+Fallback source/environment allowed:
+```
+
+Na ausência de classificação, assumir classe M e aplicar os limites padrão do documento de guardrails.
+
+
 ### Uma tarefa por unidade lógica
 
 Evitar prompts do tipo “configure tudo”.
