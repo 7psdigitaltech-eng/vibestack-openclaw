@@ -1,6 +1,6 @@
 # TASK-0012 — Retomar benchmark Ollama com contexto calibrado
 
-Status: READY
+Status: BLOCKED
 
 ## Objetivo
 
@@ -302,3 +302,7 @@ Contexto aprovado: <tokens | nenhum>
 Tool calling: <resumo>
 Bloqueio: <nenhum ou curto>
 ```
+
+## Resultado — 2026-11-02
+
+Status: BLOCKED. Testes diretos em 16K concluídos para ambos, com truncamentos; qwen 20/85 e llama 33/85 em pontuação indicativa. Hermes recusou ambos os modelos em 16K por exigir mínimo de 64K, impedindo A, B e tool calling real. 32K não elegível; 64K não testado. Nenhum modelo selecionado ou aprovado; seleção temporária removida. Contexto 16384 configurado, não aprovado para Hermes. Gateway, dashboard e Ollama ativos; modelos descarregados; sem restart/OOMKill. Métricas e limitações em docs/ops/benchmarks/ollama-models-v1.md. Próximo passo: avaliar alternativa híbrida/nuvem ou outro modelo/runtime compatível em tarefa autorizada.

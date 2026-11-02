@@ -140,3 +140,7 @@ Fase 1: PASS. Overlay da imagem local aplicada sem download ou instalacao; image
 ## Benchmark TASK-0011 — 2026-11-02
 
 Status: BLOCKED. Hermes configurado com provider custom, Ollama local e contexto solicitado 65536; modelos qwen3:4b e llama3.2:3b baixados. Primeiro teste qwen interrompido apos pressao de memoria e ausencia de resposta; modelo descarregado, container em execucao e endpoints locais respondendo. Nenhum modelo aprovado ou selecionado por falta de comparacao e testes de ferramenta. Proximo passo: definir teste seguro de contexto e recursos em tarefa autorizada.
+
+## Benchmark TASK-0012 — 2026-11-02
+
+Status: BLOCKED; Fase 2 não concluída. Testes diretos dos dois modelos em 16K concluídos, mas Hermes exige pelo menos 64K e recusou os testes one-shot e de ferramenta. Nenhum modelo local aprovado ou selecionado; configuração temporária de modelo removida. Contexto 16384 permanece configurado sem aprovação para Hermes. Serviços ativos, modelos descarregados. Avaliar alternativa híbrida/nuvem ou outro modelo/runtime compatível em tarefa própria.
