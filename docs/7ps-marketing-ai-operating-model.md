@@ -184,6 +184,16 @@ Não criar ADR para decisões pequenas ou operacionais.
 
 ## 4. Regras para execução
 
+### Ambiente de execução obrigatório
+
+Toda TASK técnica deve declarar o alvo de execução e seguir:
+
+```text
+docs/ops/execution-environments.md
+```
+
+Para `LOCAL_DESKTOP`, um preflight de no máximo 2 minutos deve comprovar acesso ao repositório local, Git, Docker e Docker Compose antes de iniciar o orçamento da TASK. Se o executor não tiver acesso real ao host, registrar `BLOCKED` imediatamente, sem tentar contornar com cloud, outro clone ou outro Docker.
+
 ### Guardrails obrigatórios do Work
 
 Toda TASK técnica deve seguir também:
