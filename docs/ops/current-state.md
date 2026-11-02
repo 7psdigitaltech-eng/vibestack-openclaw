@@ -168,3 +168,19 @@ Status: PARTIAL / USER_ACTION_REQUIRED. Google e Groq habilitados e saudaveis no
 ## TASK-0016 benchmark Google — 2026-11-02
 
 Status: BLOCKED. Gemini 3.1 Flash Lite respondeu a testes sinteticos e executou terminal real em superficies restritas; planejamento apresentou conclusao sem base suficiente. Gemini 3.6 retornou 502 no planejamento. A chave unificada FreeLLMAPI foi exibida em saida da ferramenta pelo exemplo do painel e deve ser considerada comprometida; regeneracao e atualizacao das integracoes pendentes. Hermes restaurado para Ollama local, contexto 16384 e sem default aprovado; router e servicos ativos. Nenhuma chave de provider foi observada exposta. Custo Free zero. Tools do Diretor permanecem em avaliacao role-scoped/demand-scoped.
+
+
+## Decisão de segurança — unified key FreeLLMAPI — 2026-11-02
+
+O usuário optou por manter temporariamente a unified API key atual do FreeLLMAPI, apesar da exposição observada durante a TASK-0016.
+
+Estado:
+
+```text
+Rotação: ADIADA POR DECISÃO DO USUÁRIO
+Uso permitido: avaliação interna atual
+Uso em produção/exposição externa: NÃO AUTORIZADO sem rotação prévia
+Provider keys Google/Groq: não observadas expostas
+```
+
+A exposição permanece registrada como incidente. Novos testes internos não devem ser bloqueados exclusivamente pela ausência de rotação, mas o valor da chave nunca deve ser exibido ou registrado.
