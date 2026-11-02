@@ -433,3 +433,57 @@ Se houver qualquer evidência de billing/pago, interromper e acionar o COST_GUAR
 ## Resultado parcial — 2026-11-02
 
 Status: PARTIAL / USER_ACTION_REQUIRED. Provider Google presente, habilitado e saudavel no FreeLLMAPI; Groq igualmente habilitado e saudavel. Catalogo local inclui gemini-3.1-flash-lite e gemini-3.6-flash com contexto reportado de 1.048.576, alem de gemini-2.5-flash-lite e gemini-2.5-flash; elegibilidade final, ferramentas, disponibilidade gratuita e limites ativos do projeto ainda precisam ser confirmados. O Chrome conectado mostrou uma conta Google diferente da autorizada; nenhuma alteracao de conta ou login foi efetuada. Nao foi possivel comprovar Tier Free e ausencia de billing no projeto associado a chave. Nenhuma inferencia remota, configuracao Hermes, troca de provider, novo projeto ou chave foi realizada nesta retomada; custo das acoes executadas zero. Baseline: Hermes 376,3 MiB e router 82,3 MiB; ambos ativos; gateway, dashboard, Ollama e ping interno OK; nenhum modelo Ollama carregado; Hermes sem default aprovado. Decisao provisoria: tools do Diretor serao role-scoped/demand-scoped, sem carregar biblioteca completa em toda chamada. Acao humana: confirmar na conta autorizada que o projeto usado pela chave esta no Tier Free, sem billing vinculado, e informar os limites ativos dos candidatos; nao enviar credenciais.
+
+
+## Evidência manual de Free Tier e limites — 2026-11-02
+
+O usuário forneceu evidência visual do Google AI Studio para o projeto associado à chave configurada no FreeLLMAPI.
+
+### Billing / tier
+
+Confirmado na interface:
+
+- página "Gasto da API Gemini" marcada como `Nível gratuito`;
+- projeto: `Default Gemini Project`;
+- mensagem: o projeto não tem faturamento configurado;
+- página "Faturamento da API Gemini": `Nenhuma conta de faturamento`;
+- existe botão `Configurar faturamento`, mas ele NÃO foi acionado.
+
+Portanto:
+
+```text
+GOOGLE_TIER=FREE
+GOOGLE_BILLING_LINKED=NO
+AUTHORIZED_COST=R$ 0,00 / US$ 0,00
+COST_GUARD=PASS
+```
+
+O Work não deve bloquear novamente por falta de comprovação de Free Tier/billing enquanto este mesmo projeto/chave estiver em uso.
+
+### Limites ativos exibidos pelo Google AI Studio
+
+Candidatos prioritários da TASK:
+
+| Modelo | RPM | TPM | RPD |
+|---|---:|---:|---:|
+| Gemini 3.1 Flash Lite | 15 | 250K | 500 |
+| Gemini 3.6 Flash | 5 | 250K | 20 |
+| Gemini 2.5 Flash Lite | 10 | 250K | 20 |
+| Gemini 2.5 Flash | 5 | 250K | 20 |
+
+Todos os quatro candidatos exibem TPM de 250K, acima do critério mínimo desta TASK de 20K TPM para benchmark agentic.
+
+Para o benchmark, manter a prioridade:
+
+1. `gemini-3.1-flash-lite` — melhor margem de RPM/RPD entre os candidatos prioritários;
+2. `gemini-3.6-flash` — segundo candidato para qualidade, limitado a 5 RPM / 20 RPD.
+
+Não testar mais de dois modelos nesta TASK salvo necessidade explícita de fallback por indisponibilidade.
+
+Ao retomar:
+- não repetir login;
+- não repetir criação de chave;
+- não repetir verificação de billing;
+- iniciar pelo catálogo FreeLLMAPI e benchmark direto;
+- usar apenas dados sintéticos;
+- preservar custo zero.
