@@ -1,6 +1,6 @@
 # TASK-0001 — Rotação de segredos e startup da stack Hermes-only
 
-Status: READY
+Status: BLOCKED
 
 ## Objetivo
 
@@ -186,17 +186,17 @@ Ao concluir, atualizar este bloco:
 
 ### Resultado
 
-Status: READY
-Data:
-Ambiente:
-Branch:
-Commit:
-Arquivos alterados:
-Validações executadas:
-Resultado:
-Desvios:
-Pendências:
-Próximo passo recomendado:
+Status: BLOCKED
+Data: 2026-11-02
+Ambiente: Work sem acesso comprovado ao filesystem/Docker local
+Branch: não aplicável
+Commit: não realizado pelo Work
+Arquivos alterados: nenhum
+Validações executadas: preflight de acesso ao ambiente
+Resultado: a execução não iniciou; o Work informou indisponibilidade do repositório/documentos no ambiente local e ausência de permissão para Docker
+Desvios: nenhum
+Pendências: estabelecer um mecanismo de execução local autorizado antes de reabrir a TASK
+Próximo passo recomendado: executar um preflight de ambiente LOCAL_DESKTOP e somente então reclassificar TASK-0001 como READY
 
 ## Atualização adicional
 
