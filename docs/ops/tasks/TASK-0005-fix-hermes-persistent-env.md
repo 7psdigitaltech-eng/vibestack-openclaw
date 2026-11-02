@@ -1,6 +1,6 @@
 # TASK-0005 — Corrigir precedência do ambiente Hermes e abrir API 8642
 
-Status: READY
+Status: BLOCKED
 
 ## Objetivo
 
@@ -139,3 +139,7 @@ Port mapping: <status>
 Desvios: <curto>
 Bloqueio: <curto ou nenhum>
 ```
+
+## Resultado — 2026-11-02
+
+Status: BLOCKED. Ambiente persistente alinhado, chave existente reutilizada sem exibicao e permissao restrita verificada. Servico reiniciado sem rebuild. Container em execucao sem reinicios observados; gateway presente. Listeners internos 11434 e 9119 abertos; 8642 fechado e /health inacessivel. Mapeamentos das tres portas em 127.0.0.1 confirmados. Log Hermes dedicado indisponivel; busca sanitizada no log do container nao identificou categoria de erro entre traceback, importacao, API desabilitada, falha da API ou bind. Bloqueio: API nao abriu a porta apos alinhamento e reinicio; causa nao identificada. Proximo passo: diagnostico direcionado em nova tarefa.

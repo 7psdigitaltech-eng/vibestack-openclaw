@@ -116,3 +116,7 @@ Status: BLOCKED. Os seis segredos identificados foram rotacionados e validados p
 ## Verificacao TASK-0004 — 2026-11-02
 
 Status: BLOCKED. API_SERVER_ENABLED habilitado no ambiente e no exemplo; container recriado sem rebuild, em execucao sem reinicios observados. Listeners internos: 11434 e 9119 abertos, 8642 fechado. As tres portas estao mapeadas em 127.0.0.1 pelo Docker, mas os testes HTTP no host Windows retornaram 000. Nenhum segredo foi registrado. Proximo passo: investigar inicializacao da API e acesso host em tarefa autorizada.
+
+## Verificacao TASK-0005 — 2026-11-02
+
+Status: BLOCKED. Ambiente persistente Hermes alinhado com chave existente e permissao restrita; servico reiniciado sem rebuild. Container em execucao e gateway presente; 11434 e 9119 abertos internamente, 8642 fechado e health inacessivel. As tres portas estao publicadas em 127.0.0.1. A busca sanitizada nos logs nao identificou erro relevante. Proximo passo: diagnostico direcionado da inicializacao da API.
