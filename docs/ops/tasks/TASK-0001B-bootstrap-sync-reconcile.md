@@ -1,6 +1,6 @@
 # TASK-0001B — Bootstrap seguro do clone e reconciliação da TASK-0001
 
-Status: READY
+Status: SUPERSEDED
 
 ## Objetivo
 
@@ -161,3 +161,8 @@ Remote commit:
 Secrets committed:
 Desvios:
 Bloqueio:
+
+
+## Superseded
+
+Esta TASK foi encerrada como parte da simplificação do fluxo Chat → GitHub → Work. Sincronização do clone e preflight passam a ser etapas iniciais da própria TASK operacional, conforme `docs/ops/WORK.md`.
