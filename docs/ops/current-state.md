@@ -89,6 +89,12 @@ Regra: considerar esses valores comprometidos e rotacioná-los antes de operar a
 
 Nenhum valor secreto deve ser registrado neste arquivo.
 
+## Bloqueio operacional atual
+
+A primeira tentativa de executar a `TASK-0001` via Work foi bloqueada antes da execução técnica: o ambiente do Work utilizado não possuía acesso comprovado ao repositório local em `D:\Docker\7ps-marketing\repo` nem permissão para operar o Docker Desktop.
+
+Nenhuma alteração local foi realizada por essa tentativa.
+
 ## Próximo checkpoint
 
-`TASK-0001` — rotacionar os segredos locais expostos, iniciar a stack Hermes-only, validar Hermes Gateway, dashboard e Ollama e registrar evidências sanitizadas.
+Validar um mecanismo de execução local autorizado (`LOCAL_DESKTOP`) antes de reabrir a `TASK-0001`.
