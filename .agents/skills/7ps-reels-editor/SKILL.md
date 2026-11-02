@@ -60,3 +60,22 @@ O piloto deve poder funcionar **manualmente antes de o Hermes estar operacional*
 ## Gate de qualidade
 
 Execute `references/QUALITY_GATE.md` antes de marcar `PRONTO_PARA_REVISAO`.
+
+
+## Fluxo preferencial de edição (seleção 02/11/2026)
+
+**Skill-base escolhida:** `remotion-best-practices`, publicada oficialmente em https://github.com/remotion-dev/skills. Subskill para futuros roteiros narrados: `remotion-captions`. Conferir o código/versionamento upstream antes de instalar.
+
+Para usar em Cursor/Codex:
+```bash
+npx skills add remotion-dev/skills --skill remotion-best-practices
+```
+No projeto Node/React, seguir `remotion-create` e `remotion-markup`; organizar cenas em `Sequence`, animar via `useCurrentFrame`/`interpolate` e usar `@remotion/captions` **apenas para áudio real/transcrito**. Não apresentar títulos ou lettering de vídeo silencioso como legendas sincronizadas.
+
+**Render de baixo custo:** usar Remotion Studio para prévia quando `npm install` estiver acessível; para protótipo sem acesso a npm, Python/Pillow + FFmpeg pode gerar preview e trilha original, mas documentar claramente que **não foi renderizado em Remotion**.
+
+**Uso de avatar/voz:** a única fonte de identidade permitida é a autorizada pelo titular. Fotos sintéticas animadas por movimento de câmera **não são talking-head com lip-sync**. Não gastar créditos criando várias variações antes da aprovação da versão única de roteiro/aparência. O HeyGen devolveu `402 plan_upgrade_required` para `create_instant_audio_voice` na conta gratuita em 02/11/2026; não reexecutar sem nova confirmação de plano/capacidade. Nunca representar voz genérica como sendo voz clonada do titular.
+
+**Piloto IG-Reel V2:** produção offline de cinco cenas com foto sintética autorizada, lettering cinético, fluxo empresarial progressivo, trilha instrumental original, vídeo de 21,9 s (1080×1920, H.264/AAC). Projeto Remotion/React escrito; execução local do runtime Remotion não confirmada. Artefatos binários ficam restritos à conversa, não devem ser publicados neste repo público com a aparência do titular.
+
+Antes de sair do modo rascunho, aplicar os gates em `references/QUALITY_GATE.md` e obter autorização editorial. Não acionar publicação Instagram/Ads.
