@@ -75,3 +75,7 @@ Groq habilitado e saudavel no router; catalogo inclui Qwen3.8 27B e GPT-OSS 20B.
 ### Benchmark FreeLLMAPI/Groq — 2026-11-02
 
 Plano Free confirmado. Testes diretos qwen3.8-27b e gpt-oss-20b retornaram HTTP 200; portugues 4/5 e planejamento 3/5 indicativos para ambos. Qwen A 0,65 s e B completo 2,91 s; GPT A 0,69 s e B completo 1,45 s. B com limite inicial 512 tokens truncou para ambos; repeticao com 1536 terminou. No Hermes, ambos receberam 413 com conjunto completo de ferramentas; com terminal somente, one-shot passou mas tool calling recebeu 429 e nao foi executado. Resultados locais 16K anteriores: qwen 20/85 e llama 33/85, com Hermes recusando contexto abaixo de 64K; notas de metodologias diferentes nao sao comparaveis diretamente. Nenhum modelo remoto aprovado; custo Free zero. Detalhes em TASK-0015.
+
+## Google AI Studio / TASK-0016 — 2026-11-02
+
+Status: PARTIAL. Google habilitado e saudavel no FreeLLMAPI; catalogo local inclui gemini-3.1-flash-lite, gemini-3.6-flash, gemini-2.5-flash-lite e gemini-2.5-flash. Nenhum benchmark foi executado porque nao foi possivel comprovar Free Tier e limites ativos do projeto autorizado na sessao acessivel. Sem notas ou modelo selecionado; custo das acoes executadas zero. Direcao provisoria: tools role-scoped/demand-scoped.

@@ -160,3 +160,7 @@ Status: PARTIAL / USER_ACTION_REQUIRED; COST_GUARD=TRIGGERED. Provider Groq conf
 ## TASK-0015 benchmark remoto — 2026-11-02
 
 Status: BLOCKED. Groq Free e router responderam aos testes diretos de qwen3.8-27b e gpt-oss-20b; Hermes com ferramentas completas recebeu 413 e os testes de ferramenta restritos receberam 429. Nenhum tool calling real comprovado, portanto nenhum modelo aprovado ou selecionado. Hermes restaurado para endpoint Ollama local, contexto 16384 e sem modelo default; chave unificada mantida no ambiente persistente restrito. Servicos ativos e Ollama sem modelo carregado. Nenhuma mudanca de billing; custo Free zero. Proximo passo: avaliar limites de payload/quota em tarefa propria.
+
+## TASK-0016 — 2026-11-02
+
+Status: PARTIAL / USER_ACTION_REQUIRED. Google e Groq habilitados e saudaveis no FreeLLMAPI; catalogo contem candidatos Gemini. Benchmark nao iniciado porque Tier Free, ausencia de billing e limites ativos do projeto Google autorizado nao foram comprovados. Nenhuma inferencia ou mudanca de configuracao Hermes; custo das acoes executadas zero. Tools do Diretor: role-scoped/demand-scoped, sem biblioteca completa por chamada. Aguardar comprovacao do projeto autorizado antes de testar.

@@ -1,6 +1,6 @@
 # TASK-0016 — Validar Google AI Studio Free via FreeLLMAPI com tool surface reduzida
 
-Status: READY
+Status: PARTIAL
 
 ## Objetivo
 
@@ -429,3 +429,7 @@ Ao retomar esta TASK:
 6. não repetir qualquer etapa de autenticação já concluída.
 
 Se houver qualquer evidência de billing/pago, interromper e acionar o COST_GUARD.
+
+## Resultado parcial — 2026-11-02
+
+Status: PARTIAL / USER_ACTION_REQUIRED. Provider Google presente, habilitado e saudavel no FreeLLMAPI; Groq igualmente habilitado e saudavel. Catalogo local inclui gemini-3.1-flash-lite e gemini-3.6-flash com contexto reportado de 1.048.576, alem de gemini-2.5-flash-lite e gemini-2.5-flash; elegibilidade final, ferramentas, disponibilidade gratuita e limites ativos do projeto ainda precisam ser confirmados. O Chrome conectado mostrou uma conta Google diferente da autorizada; nenhuma alteracao de conta ou login foi efetuada. Nao foi possivel comprovar Tier Free e ausencia de billing no projeto associado a chave. Nenhuma inferencia remota, configuracao Hermes, troca de provider, novo projeto ou chave foi realizada nesta retomada; custo das acoes executadas zero. Baseline: Hermes 376,3 MiB e router 82,3 MiB; ambos ativos; gateway, dashboard, Ollama e ping interno OK; nenhum modelo Ollama carregado; Hermes sem default aprovado. Decisao provisoria: tools do Diretor serao role-scoped/demand-scoped, sem carregar biblioteca completa em toda chamada. Acao humana: confirmar na conta autorizada que o projeto usado pela chave esta no Tier Free, sem billing vinculado, e informar os limites ativos dos candidatos; nao enviar credenciais.
