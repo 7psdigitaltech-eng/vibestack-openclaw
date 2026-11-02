@@ -206,3 +206,26 @@ services:
       # So' loopback no host — Manager/QR via SSH tunnel:
       #   ssh -N -L 8080:127.0.0.1:8080 root@VPS  -> http://localhost:8080/manager/login
       - "127.0.0.1:${EVOLUTION_PORT:-8080}:8080"
+
+  freellmapi:
+    image: ${FREELLMAPI_IMAGE:-ghcr.io/tashfeenahmed/freellmapi:v0.16.16}
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 3001
+      ENCRYPTION_KEY: ${FREELLMAPI_ENCRYPTION_KEY}
+      FREELLMAPI_UPDATE_CHECK: "off"
+    ports:
+      - "127.0.0.1:${FREELLMAPI_PORT:-3001}:3001"
+    volumes:
+      - ${FREELLMAPI_DATA_DIR:-/root/.freellmapi}:/app/server/data
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:3001/api/ping').then((r)=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
+      interval: 10s
+      timeout: 5s
+      start_period: 15s
+      retries: 6

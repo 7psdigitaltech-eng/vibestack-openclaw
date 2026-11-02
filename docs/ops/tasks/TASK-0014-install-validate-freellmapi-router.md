@@ -1,6 +1,6 @@
 # TASK-0014 — Instalar e validar FreeLLMAPI como router interno
 
-Status: READY
+Status: PASS
 
 ## Objetivo
 
@@ -295,3 +295,13 @@ Persistência: <status>
 Providers: nenhum
 Bloqueio: <nenhum ou curto>
 ```
+
+## Resultado — 2026-11-02
+
+Status: PASS. FreeLLMAPI v0.16.16 instalado como servico Compose, running/healthy, sem restart loop; imagem pinada. A configuracao passa somente NODE_ENV, PORT, ENCRYPTION_KEY e FREELLMAPI_UPDATE_CHECK; chave local gerada com 64 caracteres sem exposicao. Dados persistidos em D:/Docker/7ps-marketing/data/freellmapi. Windows host: /api/ping e / HTTP 200 em 127.0.0.1:3001. Do container Hermes, freellmapi:3001/api/ping HTTP 200. Apos restart exclusivo do router, health, endpoints e comunicacao interna voltaram a responder e freeapi.db permaneceu presente. Hermes dashboard e Ollama mantiveram HTTP interno 200.
+
+Baseline anterior: container principal 352,3 MiB e CPU 0,95%, sem modelo Ollama carregado. Amostra em repouso apos restart: FreeLLMAPI 65,15 MiB e CPU 0,01%; principal 426,6 MiB e CPU 0,63%; soma aproximada 491,75 MiB. Dados iniciais: 3 arquivos, 2.525.424 bytes (incluindo arquivos SQLite WAL/SHM); tamanho sujeito a variacao. Nenhum provider externo ou chave de provider foi configurado; provider/modelo Hermes nao alterados.
+
+INSTALADO = SIM
+CONFIGURADO COM PROVIDER = NÃO
+AUTORIZADO COMO BACKEND DO HERMES = NÃO

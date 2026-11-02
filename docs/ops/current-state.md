@@ -144,3 +144,7 @@ Status: BLOCKED. Hermes configurado com provider custom, Ollama local e contexto
 ## Benchmark TASK-0012 — 2026-11-02
 
 Status: BLOCKED; Fase 2 não concluída. Testes diretos dos dois modelos em 16K concluídos, mas Hermes exige pelo menos 64K e recusou os testes one-shot e de ferramenta. Nenhum modelo local aprovado ou selecionado; configuração temporária de modelo removida. Contexto 16384 permanece configurado sem aprovação para Hermes. Serviços ativos, modelos descarregados. Avaliar alternativa híbrida/nuvem ou outro modelo/runtime compatível em tarefa própria.
+
+## FreeLLMAPI TASK-0014 — 2026-11-02
+
+Status: PASS. FreeLLMAPI v0.16.16 instalado e saudavel; painel e /api/ping respondem HTTP 200 em 127.0.0.1:3001; container Hermes alcanca freellmapi:3001/api/ping por HTTP 200. Reinicio do router validado, com banco persistente preservado. RAM idle observada 65,15 MiB; CPU 0,01%; soma da stack observada 491,75 MiB. Dados em D:/Docker/7ps-marketing/data/freellmapi. INSTALADO = SIM; CONFIGURADO COM PROVIDER = NÃO; AUTORIZADO COMO BACKEND DO HERMES = NÃO. Configuracao de modelo/provider Hermes nao foi alterada.
