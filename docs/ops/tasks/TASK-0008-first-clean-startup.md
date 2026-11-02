@@ -1,6 +1,6 @@
 # TASK-0008 — Primeiro startup limpo Hermes + Ollama
 
-Status: READY
+Status: BLOCKED
 
 ## Objetivo
 
@@ -227,3 +227,7 @@ Ollama 11434: <status>
 Desvios: <curto>
 Bloqueio: <nenhum ou curto>
 ```
+
+## Resultado — 2026-11-02
+
+Status: BLOCKED. Pre-condicoes confirmadas: imagem existente, nenhum container do projeto, diretorios Hermes/Ollama vazios, segredos presentes e flags esperadas. Stack iniciada sem rebuild; container em execucao, zero reinicios observados, gateway Hermes ativo. Ollama: listener 11434 e HTTP interno 200. Dashboard: bridge 9119 aberta, mas HTTP interno encerra a conexao sem resposta; servidor interno 9120 fechado. Mapeamentos 9119 e 11434 em loopback confirmados. Nenhum indicador de falha fatal foi identificado na consulta sanitizada. Como dashboard nao estabilizou, o restart e o teste de persistencia previstos apos a estabilizacao nao foram executados; acesso host nao verificado. OpenClaw, Evolution e LM Studio desabilitados na configuracao. Nenhum segredo exibido; Fase 1 pendente. Proximo passo: diagnosticar a inicializacao do dashboard em tarefa autorizada.

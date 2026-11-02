@@ -124,3 +124,7 @@ Status: BLOCKED. Ambiente persistente Hermes alinhado com chave existente e perm
 ## Restauracao TASK-0007 — 2026-11-02
 
 Checkpoint pos-build restaurado: imagem vibestack-openclaw:latest preservada; nenhum container do projeto; diretorios persistentes Hermes e Ollama vazios. Estado anterior preservado em D:/Docker/7ps-marketing/data/backups/reset-postbuild-2026-11-02/. Segredos rotacionados preservados; flags e mounts validados; linha experimental API_SERVER_ENABLED=true removida. Nenhum volume removido ou rebuild executado. Proximo passo: primeiro startup controlado.
+
+## Startup TASK-0008 — 2026-11-02
+
+Status: BLOCKED; Fase 1 pendente. Stack iniciada a partir do checkpoint restaurado, sem rebuild. Container em execucao e gateway Hermes ativo; Ollama responde HTTP interno 200 na 11434. Bridge do dashboard 9119 aberta, mas HTTP interno encerra sem resposta e servidor interno 9120 fechado. Portas 9119 e 11434 publicadas em loopback. Restart e persistencia nao validados porque o dashboard nao estabilizou; acesso host nao verificado. Proximo passo: diagnosticar inicializacao do dashboard.
