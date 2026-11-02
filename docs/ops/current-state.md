@@ -95,6 +95,12 @@ A primeira tentativa de executar a `TASK-0001` via Work foi bloqueada antes da e
 
 Nenhuma alteração local foi realizada por essa tentativa.
 
+## Bloqueio operacional atual
+
+- Work/Cloud: não possui acesso ao host local; não usar para TASKs `LOCAL_DESKTOP`.
+- Work/Local: acesso local confirmado, porém a primeira reconciliação falhou porque o clone em `D:\Docker\7ps-marketing\repo` estava desatualizado e ainda não continha as TASKs/documentos operacionais mais recentes.
+- O protocolo anterior exigia ler a TASK local antes de permitir sincronização, criando um deadlock de bootstrap.
+
 ## Próximo checkpoint
 
-Validar um mecanismo de execução local autorizado (`LOCAL_DESKTOP`) antes de reabrir a `TASK-0001`.
+Executar `TASK-0001B` em Work/Local para sincronizar o clone por fast-forward seguro e, na mesma execução, reconciliar o resultado local anterior sem repetir ações Docker.
